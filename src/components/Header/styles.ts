@@ -5,5 +5,5 @@ export const Container = styled.View`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 12px 20px;
+  padding: 6px 20px 18px 20px;
 `;
