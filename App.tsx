@@ -1,20 +1,36 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  useFonts,
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold
+} from '@expo-google-fonts/montserrat';
+import { ThemeProvider } from 'styled-components/native';
+import { theme } from './src/theme/theme';
+import Routes from './src/routes/Routes';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold
+  });
+
+  if (!fontsLoaded) {
+    return null
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <StatusBar style="light" />
+        <Routes />
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
