@@ -37,7 +37,7 @@ export default function Routes() {
             tabBarIcon: ({ size, focused }) => {
               if (focused) {
                 return (
-                  <WrapperIcon borderTopLeftRadius='20px'>
+                  <WrapperIcon borderTopLeftRadius='14px'>
                     <Entypo name="game-controller" size={size} color="#ffffff" />
                   </WrapperIcon>
                 )
