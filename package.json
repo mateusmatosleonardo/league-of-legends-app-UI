@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "react-devtools": "react-devtools",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -29,6 +30,7 @@
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.14",
     "@types/styled-components-react-native": "^5.2.1",
+    "react-devtools": "^4.27.4",
     "react-native-svg-transformer": "^1.0.0",
     "typescript": "^4.9.4"
   },
