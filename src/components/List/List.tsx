@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { FlatList, ListRenderItemInfo } from "react-native";
 
 import Card, { ICard } from "./components/Card/Card";
-import Select from "./components/Select/Select";
+import OptionRow from "./components/OptionRow/OptionRow";
 
 import Jinx from '../../assets/champions/jinx.jpg';
 import Ashe from '../../assets/champions/ashe.jpg';
@@ -12,6 +12,10 @@ import Janna from '../../assets/champions/janna.jpg';
 import Braum from '../../assets/champions/tank/braum.jpg';
 import DrMundo from '../../assets/champions/tank/drmundo.jpg';
 import Garen from '../../assets/champions/tank/garen.jpg';
+
+interface IList {
+  data: ICard[];
+}
 
 import { styles } from "./styles";
 
@@ -25,7 +29,7 @@ const champions = {
   garen: Garen
 }
 
-const totalSpace = 90;
+const totalSpace: number = 90;
 
 export const List: React.FC = () => {
 
@@ -79,13 +83,18 @@ export const List: React.FC = () => {
 
   const renderItem = useCallback(({ item }: ListRenderItemInfo<ICard>) => <Card {...item} />, [])
 
+  const filteredAssassins = list.filter(c => c.typeChampion.includes('assassins'));
+  const filteredFighters = list.filter(c => c.typeChampion.includes('fighters'));
+  const filteredMages = list.filter(c => c.typeChampion.includes('mages'));
+  const filteredMarksmen = list.filter(c => c.typeChampion.includes('marksmen'));
+  const filteredSupports = list.filter(c => c.typeChampion.includes('supports'));
   const filteredTanks = list.filter(c => c.typeChampion.includes('tanks'));
 
-  const FlatListRender: React.FC = (props: any) => {
+  const SelectedFlatlist: React.FC<IList> = ({ data }: IList) => {
     return (
       <FlatList
         contentContainerStyle={styles.list}
-        data={props}
+        data={data}
         keyExtractor={item => item.nameChampion}
         renderItem={renderItem}
         getItemLayout={(data, index) => (
@@ -95,55 +104,24 @@ export const List: React.FC = () => {
     )
   }
 
-  const Selected: React.FC = () => {
+  const CurrentFlatlist: React.FC = () => {
     return (
-      <React.Fragment>
-        {select === 'all' ? <FlatList
-          contentContainerStyle={styles.list}
-          data={list}
-          keyExtractor={item => item.nameChampion}
-          renderItem={renderItem}
-        /> : select === 'assassins' ?
-          <FlatList
-            contentContainerStyle={styles.list}
-            data={list}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : select === 'fighters' ? <FlatList
-            contentContainerStyle={styles.list}
-            data={list}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : select === 'mages' ? <FlatList
-            contentContainerStyle={styles.list}
-            data={list}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : select === 'marksmen' ? <FlatList
-            contentContainerStyle={styles.list}
-            data={list}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : select === 'supports' ? <FlatList
-            contentContainerStyle={styles.list}
-            data={list}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : select === 'tanks' ? <FlatList
-            contentContainerStyle={styles.list}
-            data={filteredTanks}
-            keyExtractor={item => item.nameChampion}
-            renderItem={renderItem}
-          /> : null}
-      </React.Fragment>
+      <SelectedFlatlist
+        data={select === 'all' ?
+          list : select === 'assassins' ?
+            filteredAssassins : select === 'fighters' ?
+              filteredFighters : select === 'mages' ?
+                filteredMages : select === 'marksmen' ?
+                  filteredMarksmen : select === 'supports' ?
+                    filteredSupports : select === 'tanks' ?
+                      filteredTanks : []} />
     )
   }
 
   return (
     <React.Fragment>
-      <Select select={select} setSelect={setSelect} />
-      <Selected />
+      <OptionRow select={select} setSelect={setSelect} />
+      <CurrentFlatlist />
     </React.Fragment>
   )
 }
-
