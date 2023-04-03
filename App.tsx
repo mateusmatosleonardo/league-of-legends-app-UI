@@ -10,6 +10,7 @@ import {
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './src/theme/theme';
 import Routes from './src/routes/Routes';
+import HomeScreen from './src/screens/Home/HomeScreen';
 
 export default function App() {
 
@@ -28,7 +29,7 @@ export default function App() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <StatusBar style="light" />
-        <Routes />
+        <HomeScreen />
       </ThemeProvider>
     </React.Fragment>
   );
