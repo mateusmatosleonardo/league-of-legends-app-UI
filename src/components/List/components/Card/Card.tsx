@@ -25,7 +25,8 @@ const Card: React.FC<ICard> = ({ imgChampion, nameChampion, typeChampion, typeCh
     <WrapperCard>
 
       <WrapperImage>
-        <ImageChampion source={imgChampion} resizeMode="cover" />
+
+        <ImageChampion source={imgChampion} resizeMode='cover' />
       </WrapperImage>
 
       <WrapperInfo>
