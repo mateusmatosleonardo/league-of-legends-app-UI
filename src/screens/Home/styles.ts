@@ -8,8 +8,3 @@ export const Title = styled.Text`
   text-align: center;
   padding: 16px 0px 10px 0px;
 `;
-
-export const EmptyContainer = styled.View`
-  width: 100%;
-  height: 55px;
-`;
