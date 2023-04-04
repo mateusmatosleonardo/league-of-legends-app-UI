@@ -5,6 +5,7 @@ import OptionRow from "./components/OptionRow/OptionRow";
 import Search from "./components/Search/Search";
 import { images } from '../../constants';
 import { styles } from "./styles";
+import { useFetch } from "../../hooks/useFetch";
 
 interface IList {
   data: ICard[];
@@ -61,8 +62,9 @@ const List: React.FC = () => {
       typeChampion: 'tanks',
       typeChampionPtBr: 'tanques'
     },
-
   ]);
+
+  const { data } = useFetch<any[]>('url')
 
   const renderItem = useCallback(({ item }: ListRenderItemInfo<ICard>) => <Card {...item} />, [])
 
