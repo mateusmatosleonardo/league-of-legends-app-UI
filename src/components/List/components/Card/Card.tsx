@@ -25,7 +25,6 @@ const Card: React.FC<ICard> = ({ imgChampion, nameChampion, typeChampion, typeCh
     <WrapperCard>
 
       <WrapperImage>
-
         <ImageChampion source={imgChampion} resizeMode='cover' />
       </WrapperImage>
 
@@ -36,7 +35,7 @@ const Card: React.FC<ICard> = ({ imgChampion, nameChampion, typeChampion, typeCh
         </InfoChampion>
 
         <ButtonDetails>
-          <AntDesign name="right" size={20} color="#ffffff" />
+          <AntDesign name="right" size={13} color="#ffffff" />
         </ButtonDetails>
       </WrapperInfo>
 
