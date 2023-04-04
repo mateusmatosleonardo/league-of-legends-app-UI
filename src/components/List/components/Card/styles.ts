@@ -35,6 +35,8 @@ export const InfoChampion = styled.View`
   height: 100%;
   justify-content: center;
   padding-left: 20px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
   background-color: ${({ theme }) => theme.colors.WHITE};
 `;
 
@@ -51,11 +53,14 @@ export const TypeChampion = styled.Text`
 `;
 
 export const ButtonDetails = styled.Pressable`
+  position: absolute;
+  bottom: 0;
+  right: 0;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 70px;
-  border-top-right-radius: 14px;
+  width: 35px;
+  height: 35px;
+  border-top-left-radius: 14px;
   border-bottom-right-radius: 14px;
   background-color: ${({ theme }) => theme.colors.YELLOW};
 `;
