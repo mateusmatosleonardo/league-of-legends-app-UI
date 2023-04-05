@@ -1,11 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { FlatList, Image, ListRenderItemInfo } from "react-native";
+import React, { useCallback, useState } from "react";
+import { FlatList, ListRenderItemInfo } from "react-native";
 import Card, { ICard } from "./components/Card/Card";
 import OptionRow from "./components/OptionRow/OptionRow";
 import Search from "./components/Search/Search";
 import { images } from '../../constants';
 import { styles } from "./styles";
-import { useFetch } from "../../hooks/useFetch";
 
 interface IList {
   data: ICard[];
@@ -14,6 +13,8 @@ interface IList {
 const totalSpace: number = 90;
 
 const List: React.FC = () => {
+
+  const [dataChampions, setDataChampions] = useState({});
 
   const [search, setSearch] = useState('');
 
@@ -63,8 +64,6 @@ const List: React.FC = () => {
       typeChampionPtBr: 'tanques'
     },
   ]);
-
-  const { data } = useFetch<any[]>('url')
 
   const renderItem = useCallback(({ item }: ListRenderItemInfo<ICard>) => <Card {...item} />, [])
 
