@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -9,7 +10,6 @@ import {
 } from '@expo-google-fonts/montserrat';
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './src/theme/theme';
-import Routes from './src/routes/Routes';
 import HomeScreen from './src/screens/Home/HomeScreen';
 
 export default function App() {

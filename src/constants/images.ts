@@ -6,6 +6,12 @@ import DrMundo from "../assets/categories/tanks/drmundo.jpg";
 import Garen from "../assets/categories/tanks/garen.jpg";
 import Janna from "../assets/categories/supports/janna.jpg";
 
+import Ekko from "../assets/categories/assassins/ekko.jpg";
+import Irelia from "../assets/categories/assassins/irelia.jpg";
+import Vi from "../assets/categories/assassins/vi.jpg";
+import Katarina from "../assets/categories/assassins/katarina.jpg";
+import Pantheon from "../assets/categories/assassins/pantheon.jpg";
+
 export default {
   Jinx,
   Ashe,
@@ -14,4 +20,9 @@ export default {
   DrMundo,
   Garen,
   Janna,
+  Ekko,
+  Irelia,
+  Vi,
+  Katarina,
+  Pantheon,
 };
