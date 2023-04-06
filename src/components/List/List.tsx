@@ -5,6 +5,7 @@ import OptionRow from "./components/OptionRow/OptionRow";
 import Search from "./components/Search/Search";
 import { images } from '../../constants';
 import { styles } from "./styles";
+import { MotiView } from "moti";
 
 interface IList {
   data: ICard[];
@@ -63,9 +64,52 @@ const List: React.FC = () => {
       typeChampion: 'tanks',
       typeChampionPtBr: 'tanques'
     },
+    {
+      imgChampion: images.Vi,
+      nameChampion: 'Vi',
+      typeChampion: 'assassins',
+      typeChampionPtBr: 'assassinos'
+    },
+    {
+      imgChampion: images.Katarina,
+      nameChampion: 'Katarina',
+      typeChampion: 'assassins',
+      typeChampionPtBr: 'assassinos'
+    }, {
+      imgChampion: images.Ekko,
+      nameChampion: 'Ekko',
+      typeChampion: 'assassins',
+      typeChampionPtBr: 'assassinos'
+    },
+    {
+      imgChampion: images.Irelia,
+      nameChampion: 'Irelia',
+      typeChampion: 'assassins',
+      typeChampionPtBr: 'assassinos'
+    },
+
+    {
+      imgChampion: images.Pantheon,
+      nameChampion: 'Pantheon',
+      typeChampion: 'assassins',
+      typeChampionPtBr: 'assassinos'
+    },
   ]);
 
-  const renderItem = useCallback(({ item }: ListRenderItemInfo<ICard>) => <Card {...item} />, [])
+  const renderItem = useCallback(({ item, index }: ListRenderItemInfo<ICard>) => {
+    return (
+      <MotiView
+        from={{ opacity: 0, translateX: 20 }}
+        animate={{
+          opacity: 1,
+          translateX: 0,
+        }}
+        transition={{ delay: 500 + index * 500 }}
+      >
+        <Card {...item} />
+      </MotiView>
+    )
+  }, [])
 
   const filteredAssassins = list.filter(c => c.typeChampion.includes('assassins'));
   const filteredFighters = list.filter(c => c.typeChampion.includes('fighters'));
