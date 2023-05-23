@@ -1,102 +1,28 @@
 import React, { useCallback, useState } from "react";
 import { FlatList, ListRenderItemInfo } from "react-native";
-import Card, { ICard } from "./components/Card/Card";
+import Card, { CardProps } from "./components/Card/Card";
 import OptionRow from "./components/OptionRow/OptionRow";
 import Search from "./components/Search/Search";
-import { images } from '../../constants';
 import { styles } from "./styles";
 import { MotiView } from "moti";
+import useChampionStore from "../../stores/useChampionStore";
 
-interface IList {
-  data: ICard[];
+interface ListType {
+  data: CardProps[];
 }
 
 const totalSpace: number = 90;
 
 const List: React.FC = () => {
 
-  const [dataChampions, setDataChampions] = useState({});
+  const { champions } = useChampionStore();
 
   const [search, setSearch] = useState('');
 
   const [select, setSelect] = useState<'all' | 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks'>('all');
 
-  const [list, setList] = useState<ICard[]>([
-    {
-      imgChampion: images.Jinx,
-      nameChampion: 'Jinx',
-      typeChampion: 'marksmen',
-      typeChampionPtBr: 'atiradores'
-    },
-    {
-      imgChampion: images.Ashe,
-      nameChampion: 'Ashe',
-      typeChampion: 'marksmen',
-      typeChampionPtBr: 'atiradores'
-    },
-    {
-      imgChampion: images.Caitlyn,
-      nameChampion: 'Caitlyn',
-      typeChampion: 'marksmen',
-      typeChampionPtBr: 'atiradores'
-    },
-    {
-      imgChampion: images.Janna,
-      nameChampion: 'Janna',
-      typeChampion: 'supports',
-      typeChampionPtBr: 'suportes',
-    },
-    {
-      imgChampion: images.DrMundo,
-      nameChampion: 'DrMundo',
-      typeChampion: 'tanks',
-      typeChampionPtBr: 'tanques'
-    },
-    {
-      imgChampion: images.Garen,
-      nameChampion: 'Garen',
-      typeChampion: 'tanks',
-      typeChampionPtBr: 'tanques'
-    },
-    {
-      imgChampion: images.Braum,
-      nameChampion: 'Braum',
-      typeChampion: 'tanks',
-      typeChampionPtBr: 'tanques'
-    },
-    {
-      imgChampion: images.Vi,
-      nameChampion: 'Vi',
-      typeChampion: 'assassins',
-      typeChampionPtBr: 'assassinos'
-    },
-    {
-      imgChampion: images.Katarina,
-      nameChampion: 'Katarina',
-      typeChampion: 'assassins',
-      typeChampionPtBr: 'assassinos'
-    }, {
-      imgChampion: images.Ekko,
-      nameChampion: 'Ekko',
-      typeChampion: 'assassins',
-      typeChampionPtBr: 'assassinos'
-    },
-    {
-      imgChampion: images.Irelia,
-      nameChampion: 'Irelia',
-      typeChampion: 'assassins',
-      typeChampionPtBr: 'assassinos'
-    },
 
-    {
-      imgChampion: images.Pantheon,
-      nameChampion: 'Pantheon',
-      typeChampion: 'assassins',
-      typeChampionPtBr: 'assassinos'
-    },
-  ]);
-
-  const renderItem = useCallback(({ item, index }: ListRenderItemInfo<ICard>) => {
+  const renderItem = useCallback(({ item, index }: ListRenderItemInfo<CardProps>) => {
     return (
       <MotiView
         from={{ opacity: 0, translateX: 20 }}
@@ -104,22 +30,22 @@ const List: React.FC = () => {
           opacity: 1,
           translateX: 0,
         }}
-        transition={{ delay: 500 + index * 500 }}
+        transition={{ delay: 380 + index * 380 }}
       >
         <Card {...item} />
       </MotiView>
     )
   }, [])
 
-  const filteredAssassins = list.filter(c => c.typeChampion.includes('assassins'));
-  const filteredFighters = list.filter(c => c.typeChampion.includes('fighters'));
-  const filteredMages = list.filter(c => c.typeChampion.includes('mages'));
-  const filteredMarksmen = list.filter(c => c.typeChampion.includes('marksmen'));
-  const filteredSupports = list.filter(c => c.typeChampion.includes('supports'));
-  const filteredTanks = list.filter(c => c.typeChampion.includes('tanks'));
-  const filteredChampion = search.length > 0 ? list.filter(c => c.nameChampion.includes(search)) : list;
+  const filteredAssassins = champions.filter(c => c.typeChampion.includes('assassins'));
+  const filteredFighters = champions.filter(c => c.typeChampion.includes('fighters'));
+  const filteredMages = champions.filter(c => c.typeChampion.includes('mages'));
+  const filteredMarksmen = champions.filter(c => c.typeChampion.includes('marksmen'));
+  const filteredSupports = champions.filter(c => c.typeChampion.includes('supports'));
+  const filteredTanks = champions.filter(c => c.typeChampion.includes('tanks'));
+  const filteredChampion = search.length > 0 ? champions.filter(c => c.nameChampion.includes(search)) : champions;
 
-  const SelectedFlatlist: React.FC<IList> = ({ data }: IList) => {
+  const SelectedFlatlist: React.FC<ListType> = ({ data }: ListType) => {
     return (
       <FlatList
         contentContainerStyle={styles.list}
@@ -137,7 +63,7 @@ const List: React.FC = () => {
     return (
       <SelectedFlatlist
         data={select === 'all' ?
-          list : select === 'assassins' ?
+          champions : select === 'assassins' ?
             filteredAssassins : select === 'fighters' ?
               filteredFighters : select === 'mages' ?
                 filteredMages : select === 'marksmen' ?

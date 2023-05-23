@@ -13,14 +13,14 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 
-export interface ICard {
+export interface CardProps {
   imgChampion: ImageSourcePropType;
   nameChampion: string;
   typeChampion: 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks'
   typeChampionPtBr: 'assassinos' | 'lutadores' | 'magos' | 'atiradores' | 'suportes' | 'tanques';
 }
 
-const Card: React.FC<ICard> = ({ imgChampion, nameChampion, typeChampion, typeChampionPtBr }: ICard) => {
+const Card: React.FC<CardProps> = ({ imgChampion, nameChampion, typeChampion, typeChampionPtBr }: CardProps) => {
   return (
     <WrapperCard>
 
