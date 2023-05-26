@@ -1,6 +1,5 @@
 import { ImageSourcePropType } from "react-native";
 import { create } from "zustand";
-import { images } from "../constants";
 import { data } from "../constants/data";
 
 export interface ChampionType {

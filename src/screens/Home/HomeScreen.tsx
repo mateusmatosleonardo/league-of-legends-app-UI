@@ -4,6 +4,7 @@ import { Logo } from '../../constants';
 import { Title } from './styles';
 
 const HomeScreen: React.FC = () => {
+
   return (
     <Layout>
       <Header>
