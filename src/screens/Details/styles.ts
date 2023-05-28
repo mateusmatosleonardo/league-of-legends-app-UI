@@ -46,3 +46,9 @@ export const Description = styled.Text`
   font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
 `;
+
+export const TextToggle = styled.Text`
+  color: ${({ theme }) => theme.colors.YELLOW};
+  font-size: ${RFValue(14)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_SemiBold};
+`;
