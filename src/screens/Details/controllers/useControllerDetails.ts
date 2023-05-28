@@ -3,12 +3,13 @@ import { DetailsChampionType } from "../../../interfaces/interfaces";
 import { data } from "../../../constants/data";
 
 export const useControllerDetails = () => {
-  const [expanded, setExpanded] = useState(false);
-  const [height, setHeight] = useState(0);
   const [liked, setLiked] = useState<boolean>(false);
+
   const [champion, setChampion] = useState<
     DetailsChampionType | null | undefined
   >(null);
+
+  const [expanded, setExpanded] = useState(false);
 
   const animation = useRef<any>(null);
   const firstAnimation = useRef(true);
@@ -21,11 +22,6 @@ export const useControllerDetails = () => {
   };
 
   const handleToggleExpansion = () => {
-    if (!expanded) {
-      setHeight(50);
-    } else {
-      setHeight(0);
-    }
     setExpanded(!expanded);
   };
 
@@ -37,8 +33,6 @@ export const useControllerDetails = () => {
     setLiked,
     animation,
     firstAnimation,
-    height,
-    setHeight,
     expanded,
     setExpanded,
     handleToggleExpansion,
