@@ -1,4 +1,6 @@
 import 'react-native-gesture-handler';
+import 'react-native-reanimated';
+import 'react-native-get-random-values';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -10,7 +12,7 @@ import {
 } from '@expo-google-fonts/montserrat';
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './src/theme/theme';
-import HomeScreen from './src/screens/Home/HomeScreen';
+import { StackRoutes } from './src/routes/Stack.routes';
 
 export default function App() {
 
@@ -29,7 +31,7 @@ export default function App() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <StatusBar style="light" />
-        <HomeScreen />
+        <StackRoutes />
       </ThemeProvider>
     </React.Fragment>
   );

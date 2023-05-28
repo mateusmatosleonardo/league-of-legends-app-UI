@@ -1,13 +1,8 @@
 import React from 'react';
 import * as S from './styles';
+import { OptionRowProps } from '../../../../interfaces/interfaces';
 
-interface SelectProps {
-  select: 'all' | 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks';
-  setSelect: (select: 'all' | 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks') => void;
-  disabled: boolean;
-}
-
-const OptionRow: React.FC<SelectProps> = ({ select, setSelect, disabled }: SelectProps) => {
+const OptionRow: React.FC<OptionRowProps> = ({ select, setSelect, disabled }: OptionRowProps) => {
   return (
     <S.WrapperSelect>
       <S.TypesOfChampions

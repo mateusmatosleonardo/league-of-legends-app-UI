@@ -1,25 +1,6 @@
-import { ImageSourcePropType } from "react-native";
 import { create } from "zustand";
 import { data } from "../constants/data";
-
-export interface ChampionType {
-  imgChampion: ImageSourcePropType;
-  nameChampion: string;
-  typeChampion:
-    | "assassins"
-    | "fighters"
-    | "mages"
-    | "marksmen"
-    | "supports"
-    | "tanks";
-  typeChampionPtBr:
-    | "assassinos"
-    | "lutadores"
-    | "magos"
-    | "atiradores"
-    | "suportes"
-    | "tanques";
-}
+import { ChampionType } from "../interfaces/interfaces";
 
 export type State = {
   champions: ChampionType[];

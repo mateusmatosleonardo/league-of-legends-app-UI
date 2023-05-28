@@ -2,11 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { BehaviorBox, Input, SearchIcon, WrapperIcon, WrapperInput, WrapperSearch } from "./styles";
 import { Feather } from '@expo/vector-icons';
-
-interface SearchProps {
-  value: string;
-  onChangeText: (text: string) => void;
-}
+import { SearchProps } from "../../../../interfaces/interfaces";
 
 const Search: React.FC<SearchProps> = ({ value, onChangeText }: SearchProps) => {
   return (

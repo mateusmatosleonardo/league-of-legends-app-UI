@@ -1,15 +1,13 @@
 import React, { useCallback, useState } from "react";
 import { FlatList, ListRenderItemInfo } from "react-native";
-import Card, { CardProps } from "./components/Card/Card";
+import useChampionStore from "../../stores/useChampionStore";
+import Card from "./components/Card/Card";
 import OptionRow from "./components/OptionRow/OptionRow";
 import Search from "./components/Search/Search";
 import { styles } from "./styles";
 import { MotiView } from "moti";
-import useChampionStore from "../../stores/useChampionStore";
-
-interface ListType {
-  data: CardProps[];
-}
+import { CardProps, HomeScreenProps, ListType } from "../../interfaces/interfaces";
+import { useNavigation } from "@react-navigation/native";
 
 const totalSpace: number = 90;
 
@@ -21,6 +19,7 @@ const List: React.FC = () => {
 
   const [select, setSelect] = useState<'all' | 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks'>('all');
 
+  const navigation = useNavigation<HomeScreenProps>();
 
   const renderItem = useCallback(({ item, index }: ListRenderItemInfo<CardProps>) => {
     return (
@@ -32,7 +31,7 @@ const List: React.FC = () => {
         }}
         transition={{ delay: 380 + index * 380 }}
       >
-        <Card {...item} />
+        <Card {...item} onPress={() => navigation.navigate('DetailsScreen', { id: item.id })} />
       </MotiView>
     )
   }, [])

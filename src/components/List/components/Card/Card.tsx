@@ -1,5 +1,4 @@
 import React from "react";
-import { ImageSourcePropType } from "react-native";
 import {
   ButtonDetails,
   ImageChampion,
@@ -12,15 +11,9 @@ import {
 } from "./styles";
 
 import { AntDesign } from '@expo/vector-icons';
+import { CardProps } from "../../../../interfaces/interfaces";
 
-export interface CardProps {
-  imgChampion: ImageSourcePropType;
-  nameChampion: string;
-  typeChampion: 'assassins' | 'fighters' | 'mages' | 'marksmen' | 'supports' | 'tanks'
-  typeChampionPtBr: 'assassinos' | 'lutadores' | 'magos' | 'atiradores' | 'suportes' | 'tanques';
-}
-
-const Card: React.FC<CardProps> = ({ imgChampion, nameChampion, typeChampion, typeChampionPtBr }: CardProps) => {
+const Card: React.FC<CardProps> = ({ imgChampion, nameChampion, typeChampionPtBr, onPress }: CardProps) => {
   return (
     <WrapperCard>
 
@@ -34,7 +27,7 @@ const Card: React.FC<CardProps> = ({ imgChampion, nameChampion, typeChampion, ty
           <TypeChampion>{typeChampionPtBr}</TypeChampion>
         </InfoChampion>
 
-        <ButtonDetails>
+        <ButtonDetails onPress={onPress}>
           <AntDesign name="right" size={13} color="#ffffff" />
         </ButtonDetails>
       </WrapperInfo>

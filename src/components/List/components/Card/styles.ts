@@ -50,6 +50,7 @@ export const TypeChampion = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
   font-size: ${RFValue(12)}px;
   color: ${({ theme }) => theme.colors.BLACK};
+  margin-top: 6px;
 `;
 
 export const ButtonDetails = styled.Pressable`
