@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Header, Layout } from "../../components";
 import { RootStackParamsList } from "../../routes/types";
-import { Box, BoxDescription, BtnGoBack, Description, Name, Pressable, Surname, WrapperInfos } from "./styles";
+import { Box, BoxDescription, BtnGoBack, Description, Name, Pressable, Surname, TextToggle, WrapperInfos } from "./styles";
 import { useControllerDetails } from "./controllers/useControllerDetails";
 import AnimatedLottieView from "lottie-react-native";
 import Like from '../../assets/icons/like.json';
@@ -11,7 +11,15 @@ import Icon from '@expo/vector-icons/MaterialIcons';
 
 const DetailsScreen: React.FC = () => {
 
-  const { champion, fetchChampion, liked, setLiked, animation, firstAnimation, expanded, handleToggleExpansion } = useControllerDetails();
+  const {
+    champion,
+    fetchChampion,
+    liked, setLiked,
+    animation,
+    firstAnimation,
+    expanded,
+    handleToggleExpansion
+  } = useControllerDetails();
 
   const route = useRoute<RouteProp<RootStackParamsList, 'DetailsScreen'>>();
   const { id } = route.params;
@@ -64,24 +72,13 @@ const DetailsScreen: React.FC = () => {
           </Box>
           <BoxDescription>
             <Description numberOfLines={expanded ? undefined : 3}>{champion?.description}</Description>
+            <Pressable onPress={handleToggleExpansion}>
+              <TextToggle>{expanded ? "Ver Menos" : "Ver Mais"}</TextToggle>
+            </Pressable>
           </BoxDescription>
-
-          <View>
-            {expanded && (
-              <TouchableOpacity onPress={handleToggleExpansion}>
-                <Text style={{ color: "blue" }}>Ver Menos</Text>
-              </TouchableOpacity>
-            )}
-            {!expanded && (
-              <TouchableOpacity onPress={handleToggleExpansion}>
-                <Text style={{ color: "blue" }}>Ver Mais</Text>
-              </TouchableOpacity>
-            )}
-          </View>
         </React.Fragment> : <Text>Carregando...</Text>}
     </Layout>
   )
-
 };
 
 export default DetailsScreen;
