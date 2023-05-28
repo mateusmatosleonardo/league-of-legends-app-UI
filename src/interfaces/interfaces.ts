@@ -2,33 +2,46 @@ import { NavigationProp } from "@react-navigation/native";
 import { ImageSourcePropType } from "react-native";
 import { RootStackParamsList } from "../routes/types";
 
+export enum EnumTypeChampion {
+  Assassins = "assassins",
+  Fighters = "fighters",
+  Mages = "mages",
+  Marksmen = "marksmen",
+  Supports = "supports",
+  Tanks = "tanks",
+}
+
+export enum EnumTypeChampionBr {
+  Assassinos = "assassinos",
+  Lutadores = "lutadores",
+  Magos = "magos",
+  Atiradores = "atiradores",
+  Suportes = "suportes",
+  Tanques = "tanques",
+}
+
 export interface ChampionType {
   id: string;
   imgChampion: ImageSourcePropType;
   nameChampion: string;
-  typeChampion:
-    | "assassins"
-    | "fighters"
-    | "mages"
-    | "marksmen"
-    | "supports"
-    | "tanks";
-  typeChampionPtBr:
-    | "assassinos"
-    | "lutadores"
-    | "magos"
-    | "atiradores"
-    | "suportes"
-    | "tanques";
+  typeChampion: EnumTypeChampion;
+  typeChampionPtBr: EnumTypeChampionBr;
 }
 
 export interface CardProps extends ChampionType {
   onPress?: () => void;
 }
 
+export interface Skills {
+  nameSkill: string;
+  imgSkill: ImageSourcePropType;
+  descriptionSkill: string;
+}
+
 export interface DetailsChampionType extends ChampionType {
   surname?: string;
   description?: string;
+  skills?: Skills[];
 }
 
 export interface OptionRowProps {

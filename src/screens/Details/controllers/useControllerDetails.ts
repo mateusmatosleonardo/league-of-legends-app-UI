@@ -9,7 +9,9 @@ export const useControllerDetails = () => {
     DetailsChampionType | null | undefined
   >(null);
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState<boolean>(false);
+
+  const [selectedSkillIndex, setSelectedSkillIndex] = useState<number>(0);
 
   const animation = useRef<any>(null);
   const firstAnimation = useRef(true);
@@ -25,6 +27,10 @@ export const useControllerDetails = () => {
     setExpanded(!expanded);
   };
 
+  const handleSkillPress = (index: number) => {
+    setSelectedSkillIndex(index);
+  };
+
   return {
     champion,
     setChampion,
@@ -36,5 +42,8 @@ export const useControllerDetails = () => {
     expanded,
     setExpanded,
     handleToggleExpansion,
+    handleSkillPress,
+    selectedSkillIndex,
+    setSelectedSkillIndex,
   };
 };
