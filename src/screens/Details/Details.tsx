@@ -1,27 +1,12 @@
 import React, { useEffect } from "react";
-import { Text } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { Header, Layout } from "../../components";
+import { Header, Layout, LoadingScreen } from "../../components";
+import HeaderInfos from "./components/HeaderInfos/HeaderInfos";
 import { RootStackParamsList } from "../../routes/types";
-import {
-  BoxDescription,
-  BtnGoBack,
-  Description,
-  Pressable,
-  SkillDescription,
-  SkillIcon, SkillInfos,
-  SkillList,
-  SkillName,
-  TextToggle,
-  TitleSkills,
-  ToggleSkill,
-  WrapperSkills
-} from "./styles";
 import { useControllerDetails } from "./controllers/useControllerDetails";
-
-import Icon from '@expo/vector-icons/MaterialIcons';
-import InitialInfo from "./components/InitialInfo/InitialInfo";
 import { MotiView } from "moti";
+import * as S from "./styles";
+import Icon from '@expo/vector-icons/MaterialIcons';
 
 const DetailsScreen: React.FC = () => {
 
@@ -68,27 +53,25 @@ const DetailsScreen: React.FC = () => {
       {champion ?
         <React.Fragment>
           <Header>
-            <BtnGoBack onPress={() => navigation.goBack()}>
+            <S.BtnGoBack onPress={() => navigation.goBack()}>
               <Icon name="keyboard-arrow-left" size={30} color="#fafafa" />
-            </BtnGoBack>
+            </S.BtnGoBack>
           </Header>
-
-          <InitialInfo
+          <HeaderInfos
             name={champion?.nameChampion}
             surname={champion?.surname}
             animation={animation}
             onPress={() => setLiked(!liked)}
           />
-
-          <BoxDescription>
-            <Description numberOfLines={expanded ? undefined : 3}>{champion?.description}</Description>
-            <Pressable onPress={handleToggleExpansion}>
-              <TextToggle>{expanded ? "Ver Menos" : "Ver Mais"}</TextToggle>
-            </Pressable>
-          </BoxDescription>
-          <WrapperSkills>
-            <TitleSkills>Habilidades</TitleSkills>
-            <SkillList>
+          <S.BoxDescription>
+            <S.Description numberOfLines={expanded ? undefined : 3}>{champion?.description}</S.Description>
+            <S.Pressable onPress={handleToggleExpansion}>
+              <S.TextToggle>{expanded ? "Ver Menos" : "Ver Mais"}</S.TextToggle>
+            </S.Pressable>
+          </S.BoxDescription>
+          <S.WrapperSkills>
+            <S.TitleSkills>Habilidades</S.TitleSkills>
+            <S.SkillList>
               {champion.skills?.map((skill, index) => (
                 <MotiView
                   key={index}
@@ -99,18 +82,18 @@ const DetailsScreen: React.FC = () => {
                   }}
                   transition={{ delay: 50 + index * 380, type: "timing" }}
                 >
-                  <ToggleSkill onPress={() => handleSkillPress(index)} style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}>
-                    <SkillIcon source={skill.imgSkill} />
-                  </ToggleSkill>
+                  <S.ToggleSkill onPress={() => handleSkillPress(index)} style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}>
+                    <S.SkillIcon source={skill.imgSkill} />
+                  </S.ToggleSkill>
                 </MotiView>
               ))}
-            </SkillList>
-            <SkillInfos>
-              <SkillName>{selectedSkill?.nameSkill}</SkillName>
-              <SkillDescription>{selectedSkill?.descriptionSkill}</SkillDescription>
-            </SkillInfos>
-          </WrapperSkills>
-        </React.Fragment> : <Text>Carregando...</Text>}
+            </S.SkillList>
+            <S.SkillInfos>
+              <S.SkillName>{selectedSkill?.nameSkill}</S.SkillName>
+              <S.SkillDescription>{selectedSkill?.descriptionSkill}</S.SkillDescription>
+            </S.SkillInfos>
+          </S.WrapperSkills>
+        </React.Fragment> : <LoadingScreen />}
     </Layout>
   )
 };
