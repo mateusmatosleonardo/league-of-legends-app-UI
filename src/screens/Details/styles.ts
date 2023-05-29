@@ -35,7 +35,7 @@ export const WrapperSkills = styled.View`
   padding: 0px 20px 15px 20px;
 `;
 
-export const TitleSkills = styled.Text`
+export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.GRAY};
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
@@ -47,6 +47,11 @@ export const SkillList = styled.View`
   flex-direction: row;
 `;
 
+export const SkillInfos = styled.View`
+  width: 100%;
+  margin-top: 15px;
+`;
+
 export const ToggleSkill = styled.Pressable``;
 
 export const SkillIcon = styled.Image`
@@ -54,11 +59,6 @@ export const SkillIcon = styled.Image`
   height: 38px;
   border-radius: 19.5px;
   margin-right: 15px;
-`;
-
-export const SkillInfos = styled.View`
-  width: 100%;
-  margin-top: 15px;
 `;
 
 export const SkillName = styled.Text`

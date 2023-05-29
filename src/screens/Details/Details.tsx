@@ -70,7 +70,7 @@ const DetailsScreen: React.FC = () => {
             </S.Pressable>
           </S.BoxDescription>
           <S.WrapperSkills>
-            <S.TitleSkills>Habilidades</S.TitleSkills>
+            <S.Title>Habilidades</S.Title>
             <S.SkillList>
               {champion.skills?.map((skill, index) => (
                 <MotiView
