@@ -8,7 +8,6 @@ import { styles } from "./styles";
 import { MotiView } from "moti";
 import { CardProps, HomeScreenProps, ListType } from "../../interfaces/interfaces";
 import { useNavigation } from "@react-navigation/native";
-import { api } from "../../services/api";
 
 const totalSpace: number = 90;
 
@@ -49,7 +48,7 @@ const List: React.FC = () => {
     return (
       <FlatList
         contentContainerStyle={styles.list}
-        data={data}
+        data={data.sort((a, b) => a.nameChampion.localeCompare(b.nameChampion))}
         keyExtractor={item => item.nameChampion}
         renderItem={renderItem}
         getItemLayout={(data, index) => (
