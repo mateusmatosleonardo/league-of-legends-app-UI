@@ -8,6 +8,7 @@ import { MotiView } from "moti";
 import * as S from "./styles";
 import Icon from '@expo/vector-icons/MaterialIcons';
 import { EnumDifficulty } from "../../interfaces/interfaces";
+import FooterDetails from "./components/FooterDetails/FooterDetails";
 
 const DetailsScreen: React.FC = () => {
 
@@ -120,27 +121,14 @@ const DetailsScreen: React.FC = () => {
               <S.SkillDescription>{selectedSkill?.descriptionSkill}</S.SkillDescription>
             </S.SkillInfos>
           </S.WrapperSkills>
-          <S.WrapperFooter>
 
-            <S.WrapperFunction>
-              <S.ImageFunction
-                source={champion?.iconFunction}
-              />
-              <S.WrapperFunctionTitles>
-                <S.StaticTitleFunction>Função</S.StaticTitleFunction>
-                <S.TitleFunction>{champion?.function}</S.TitleFunction>
-              </S.WrapperFunctionTitles>
-            </S.WrapperFunction>
+          <FooterDetails
+            icon={champion?.iconFunction}
+            roleOfChampion={champion?.function}
+            difficulty={champion?.difficulty}
+            renderDifficulty={renderDifficulty(champion?.difficulty)}
+          />
 
-            <S.WrapperDifficulty>
-              <S.TitleDifficulty>Dificuldade</S.TitleDifficulty>
-              <S.Difficulty>{champion?.difficulty}</S.Difficulty>
-              <S.WrapperDifficultyIcons>
-                {renderDifficulty(champion?.difficulty)}
-              </S.WrapperDifficultyIcons>
-            </S.WrapperDifficulty>
-
-          </S.WrapperFooter>
         </React.Fragment> : <LoadingScreen />}
     </Layout>
   )
