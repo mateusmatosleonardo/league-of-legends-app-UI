@@ -1,9 +1,15 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 interface StyledDetailsProps {
   color?: string;
 }
+
+const baseTextStyle = css`
+  color: ${({ theme }) => theme.colors.GRAY};
+  font-size: ${RFValue(16)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
+`;
 
 export const BtnGoBack = styled.Pressable`
   justify-content: center;
