@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import {
   DetailsChampionType,
+  EnumDifficulty,
   EnumTypeChampion,
   EnumTypeChampionBr,
 } from "../interfaces/interfaces";
@@ -49,6 +50,9 @@ export const data: DetailsChampionType[] = [
     ],
     typeChampion: EnumTypeChampion.Marksmen,
     typeChampionPtBr: EnumTypeChampionBr.Atiradores,
+    function: "Atirador",
+    iconFunction: skills.Atirador,
+    difficulty: EnumDifficulty.easy,
   },
   {
     id: uuidv4(),
