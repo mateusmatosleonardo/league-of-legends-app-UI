@@ -100,8 +100,46 @@ export const data: DetailsChampionType[] = [
     id: uuidv4(),
     imgChampion: images.Vi,
     nameChampion: "Vi",
-    typeChampion: "assassins",
-    typeChampionPtBr: "assassinos",
+    surname: "A Defensora de Piltover",
+    description:
+      "Antiga criminosa das ruas impiedosas de Zaun, Vi é uma mulher temível, impulsiva e explosiva com um respeito bem frágil pelas autoridades. Ao crescer praticamente sozinha, Vi desenvolveu instintos de sobrevivência afiados e um senso de humor ácido. Agora, trabalhando lado a lado com os Vigias para manter a paz em Piltover, ela porta poderosas manoplas hextec capazes de esmagar paredes e suspeitos com facilidade.",
+    skills: [
+      {
+        nameSkill: "PASSIVA - PANCADA CERTEIRA",
+        imgSkill: skills.vi1,
+        descriptionSkill:
+          "Todo terceiro ataque contra o mesmo inimigo causa dano equivalente a um percentual da Vida máxima do alvo, reduz a Armadura do alvo e concede Velocidade de Ataque a Vi.",
+      },
+      {
+        nameSkill: "1 - QUEBRA-COFRES",
+        imgSkill: skills.vi2,
+        descriptionSkill:
+          "Vi carrega suas manoplas e desfere um soco capaz de quebrar cofres, empurrando-a para a frente. Os inimigos que ela atingir são empurrados para trás e recebem um acúmulo de Pancada Certeira.",
+      },
+      {
+        nameSkill: "2 - BLINDAGEM",
+        imgSkill: skills.vi3,
+        descriptionSkill:
+          "Vi ganha acúmulos de Blindagem ao acertar algum inimigo com um ataque ou uma habilidade. Ativar Blindagem gera um escudo que absorve dano. Com o máximo de acúmulos, Vi também recebe Velocidade de Movimento.",
+      },
+      {
+        nameSkill: "3 - MFORÇA EXCESSIVA",
+        imgSkill: skills.vi4,
+        descriptionSkill:
+          "O próximo ataque de Vi atravessará seu alvo, causando dano aos inimigos atrás dele.",
+      },
+      {
+        nameSkill: "ULTIMATE - SAQUE E ENTERRADA",
+        imgSkill: skills.vi5,
+        descriptionSkill:
+          "Vi persegue um inimigo em alta velocidade, arremessando para o lado qualquer um que estiver em seu trajeto. Ao alcançar o alvo, ela o arremessa ao ar, salta atrás dele e o golpeia de volta ao chão.",
+      },
+    ],
+    typeChampion: EnumTypeChampion.Fighters,
+    typeChampionPtBr: EnumTypeChampionBr.Lutadores,
+    function: "Lutador",
+    iconFunction: skills.Lutador,
+    difficulty: EnumDifficulty.easy,
   },
   {
     id: uuidv4(),
