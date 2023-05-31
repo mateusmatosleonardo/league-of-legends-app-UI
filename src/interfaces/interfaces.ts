@@ -20,6 +20,12 @@ export enum EnumTypeChampionBr {
   Tanques = "tanques",
 }
 
+export enum EnumDifficulty {
+  easy = "Fácil",
+  medium = "Médio",
+  hard = "Difícil",
+}
+
 export interface ChampionType {
   id: string;
   imgChampion: ImageSourcePropType;
@@ -42,6 +48,9 @@ export interface DetailsChampionType extends ChampionType {
   surname?: string;
   description?: string;
   skills?: Skills[];
+  function: string;
+  iconFunction: ImageSourcePropType;
+  difficulty: EnumDifficulty;
 }
 
 export interface OptionRowProps {
