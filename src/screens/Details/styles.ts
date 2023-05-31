@@ -1,6 +1,10 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
+interface StyledDetailsProps {
+  color?: string;
+}
+
 export const BtnGoBack = styled.Pressable`
   justify-content: center;
   align-items: center;
@@ -72,4 +76,69 @@ export const SkillDescription = styled.Text`
   font-size: ${RFValue(12)}px;
   font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
   margin-top: 7.5px;
+`;
+
+export const WrapperFooter = styled.View`
+  width: 100%;
+  padding: 0px 20px;
+  margin-top: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const WrapperFunction = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const WrapperFunctionTitles = styled.View`
+  margin-left: 24px;
+`;
+
+export const ImageFunction = styled.Image`
+  width: 70px;
+  height: 70px;
+`;
+
+export const StaticTitleFunction = styled.Text`
+  color: ${({ theme }) => theme.colors.GRAY_SECONDARY};
+  font-size: ${RFValue(12)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
+`;
+
+export const TitleFunction = styled.Text`
+  color: ${({ theme }) => theme.colors.GRAY};
+  font-size: ${RFValue(16)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
+  margin-top: 4px;
+`;
+
+export const WrapperDifficulty = styled.View``;
+
+export const TitleDifficulty = styled.Text`
+  color: ${({ theme }) => theme.colors.GRAY_SECONDARY};
+  font-size: ${RFValue(12)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
+`;
+
+export const Difficulty = styled.Text`
+  color: ${({ theme }) => theme.colors.GRAY};
+  font-size: ${RFValue(16)}px;
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
+  margin-top: 1px;
+`;
+
+export const WrapperDifficultyIcons = styled.View`
+  flex-direction: row;
+`;
+
+export const DifficultyIcon = styled.View<StyledDetailsProps>`
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-top: 7px;
+  background-color: ${(p) => (p.color ? p.color : "rgba(255, 255, 255, 0.1)")};
 `;
