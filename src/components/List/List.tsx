@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FlatList, ListRenderItemInfo } from "react-native";
 import useChampionStore from "../../stores/useChampionStore";
 import Card from "./components/Card/Card";
@@ -8,6 +8,7 @@ import { styles } from "./styles";
 import { MotiView } from "moti";
 import { CardProps, HomeScreenProps, ListType } from "../../interfaces/interfaces";
 import { useNavigation } from "@react-navigation/native";
+import { api } from "../../services/api";
 
 const totalSpace: number = 90;
 
