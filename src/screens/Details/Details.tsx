@@ -7,6 +7,7 @@ import { useControllerDetails } from "./controllers/useControllerDetails";
 import { MotiView } from "moti";
 import * as S from "./styles";
 import Icon from '@expo/vector-icons/MaterialIcons';
+import { EnumDifficulty } from "../../interfaces/interfaces";
 
 const DetailsScreen: React.FC = () => {
 
@@ -47,6 +48,32 @@ const DetailsScreen: React.FC = () => {
       animation.current?.play(45, 60);
     }
   }, [liked]);
+
+  function renderDifficulty(difficulty: string) {
+    return (
+      <React.Fragment>
+        {champion?.difficulty === EnumDifficulty.easy ?
+          <React.Fragment>
+            <S.DifficultyIcon color="#ffc107" />
+            <S.DifficultyIcon />
+            <S.DifficultyIcon />
+          </React.Fragment>
+          : champion?.difficulty === EnumDifficulty.medium ?
+            <React.Fragment>
+              <S.DifficultyIcon color="#ffc107" />
+              <S.DifficultyIcon color="#ffc107" />
+              <S.DifficultyIcon />
+            </React.Fragment> : champion?.difficulty === EnumDifficulty.hard ?
+              <React.Fragment>
+                <S.DifficultyIcon color="#ffc107" />
+                <S.DifficultyIcon color="#ffc107" />
+                <S.DifficultyIcon color="#ffc107" />
+              </React.Fragment>
+              : null
+        }
+      </React.Fragment>
+    )
+  }
 
   return (
     <Layout>
@@ -93,6 +120,27 @@ const DetailsScreen: React.FC = () => {
               <S.SkillDescription>{selectedSkill?.descriptionSkill}</S.SkillDescription>
             </S.SkillInfos>
           </S.WrapperSkills>
+          <S.WrapperFooter>
+
+            <S.WrapperFunction>
+              <S.ImageFunction
+                source={champion?.iconFunction}
+              />
+              <S.WrapperFunctionTitles>
+                <S.StaticTitleFunction>Função</S.StaticTitleFunction>
+                <S.TitleFunction>{champion?.function}</S.TitleFunction>
+              </S.WrapperFunctionTitles>
+            </S.WrapperFunction>
+
+            <S.WrapperDifficulty>
+              <S.TitleDifficulty>Dificuldade</S.TitleDifficulty>
+              <S.Difficulty>{champion?.difficulty}</S.Difficulty>
+              <S.WrapperDifficultyIcons>
+                {renderDifficulty(champion?.difficulty)}
+              </S.WrapperDifficultyIcons>
+            </S.WrapperDifficulty>
+
+          </S.WrapperFooter>
         </React.Fragment> : <LoadingScreen />}
     </Layout>
   )
