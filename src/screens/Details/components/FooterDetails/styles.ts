@@ -15,7 +15,7 @@ const baseTitleStyles = css`
 
 export const Container = styled.View`
   width: 100%;
-  padding: 0px 20px;
+  padding: 0px 20px 15px 20px;
   margin-top: 40px;
   flex-direction: row;
   justify-content: space-between;
