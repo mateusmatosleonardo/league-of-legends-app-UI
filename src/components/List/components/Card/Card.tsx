@@ -13,21 +13,21 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import { CardProps } from "../../../../interfaces/interfaces";
 
-const Card: React.FC<CardProps> = ({ imgChampion, nameChampion, typeChampionPtBr, onPress }: CardProps) => {
+const Card: React.FC<CardProps> = ({ image, name, typeBr, navigation }: CardProps) => {
   return (
     <WrapperCard>
 
       <WrapperImage>
-        <ImageChampion source={imgChampion} resizeMode='cover' />
+        <ImageChampion source={image} resizeMode='cover' />
       </WrapperImage>
 
       <WrapperInfo>
         <InfoChampion>
-          <NameChampion>{nameChampion}</NameChampion>
-          <TypeChampion>{typeChampionPtBr}</TypeChampion>
+          <NameChampion>{name}</NameChampion>
+          <TypeChampion>{typeBr}</TypeChampion>
         </InfoChampion>
 
-        <ButtonDetails onPress={onPress}>
+        <ButtonDetails onPress={navigation}>
           <AntDesign name="right" size={13} color="#ffffff" />
         </ButtonDetails>
       </WrapperInfo>
