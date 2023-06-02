@@ -31,25 +31,25 @@ const List: React.FC = () => {
         }}
         transition={{ delay: 380 + index * 380 }}
       >
-        <Card {...item} onPress={() => navigation.navigate('DetailsScreen', { id: item.id })} />
+        <Card {...item} navigation={() => navigation.navigate('DetailsScreen', { id: item.id })} />
       </MotiView>
     )
   }, [])
 
-  const filteredAssassins = champions.filter(c => c.typeChampion.includes('assassins'));
-  const filteredFighters = champions.filter(c => c.typeChampion.includes('fighters'));
-  const filteredMages = champions.filter(c => c.typeChampion.includes('mages'));
-  const filteredMarksmen = champions.filter(c => c.typeChampion.includes('marksmen'));
-  const filteredSupports = champions.filter(c => c.typeChampion.includes('supports'));
-  const filteredTanks = champions.filter(c => c.typeChampion.includes('tanks'));
-  const filteredChampion = search.length > 0 ? champions.filter(c => c.nameChampion.includes(search)) : champions;
+  const filteredAssassins = champions.filter(c => c.type.includes('assassins'));
+  const filteredFighters = champions.filter(c => c.type.includes('fighters'));
+  const filteredMages = champions.filter(c => c.type.includes('mages'));
+  const filteredMarksmen = champions.filter(c => c.type.includes('marksmen'));
+  const filteredSupports = champions.filter(c => c.type.includes('supports'));
+  const filteredTanks = champions.filter(c => c.type.includes('tanks'));
+  const filteredChampion = search.length > 0 ? champions.filter(c => c.name.includes(search)) : champions;
 
   const SelectedFlatlist: React.FC<ListType> = ({ data }: ListType) => {
     return (
       <FlatList
         contentContainerStyle={styles.list}
-        data={data.sort((a, b) => a.nameChampion.localeCompare(b.nameChampion))}
-        keyExtractor={item => item.nameChampion}
+        data={data.sort((a, b) => a.name.localeCompare(b.name))}
+        keyExtractor={item => item.name}
         renderItem={renderItem}
         getItemLayout={(data, index) => (
           { length: totalSpace, offset: totalSpace * index, index }
@@ -78,7 +78,7 @@ const List: React.FC = () => {
       {search.length > 0 ?
         <FlatList
           data={filteredChampion}
-          keyExtractor={item => item.nameChampion}
+          keyExtractor={item => item.name}
           renderItem={renderItem}
           contentContainerStyle={{ paddingHorizontal: 20 }}
         /> : <CurrentFlatlist />}
