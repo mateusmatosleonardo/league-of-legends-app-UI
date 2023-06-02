@@ -5,6 +5,8 @@ interface StyledDetailsProps {
   color?: string;
 }
 
+export const Scroll = styled.ScrollView``;
+
 export const BtnGoBack = styled.Pressable`
   justify-content: center;
   align-items: center;
