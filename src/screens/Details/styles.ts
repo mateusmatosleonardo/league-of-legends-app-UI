@@ -1,9 +1,17 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 interface StyledDetailsProps {
   color?: string;
 }
+
+const baseTextStyles = css`
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
+`;
+
+const baseTitleStyles = css`
+  font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
+`;
 
 export const Scroll = styled.ScrollView``;
 
@@ -18,16 +26,10 @@ export const BtnGoBack = styled.Pressable`
 
 export const Pressable = styled.Pressable``;
 
-export const BoxDescription = styled.View`
-  width: 100%;
-  padding: 15px 20px;
-  text-align: center;
-`;
-
 export const Description = styled.Text`
   color: ${({ theme }) => theme.colors.WHITE};
   font-size: ${RFValue(14)}px;
-  font-family: ${({ theme }) => theme.fonts.Montserrat_Regular};
+  ${baseTextStyles}
 `;
 
 export const TextToggle = styled.Text`
@@ -36,36 +38,13 @@ export const TextToggle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Montserrat_SemiBold};
 `;
 
-export const WrapperSkills = styled.View`
-  width: 100%;
-  padding: 0px 20px 15px 20px;
-`;
-
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.GRAY};
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
 `;
 
-export const SkillList = styled.View`
-  width: 100%;
-  margin-top: 15px;
-  flex-direction: row;
-`;
-
-export const SkillInfos = styled.View`
-  width: 100%;
-  margin-top: 15px;
-`;
-
 export const ToggleSkill = styled.Pressable``;
-
-export const SkillIcon = styled.Image`
-  width: 38px;
-  height: 38px;
-  border-radius: 19.5px;
-  margin-right: 15px;
-`;
 
 export const SkillName = styled.Text`
   color: ${({ theme }) => theme.colors.GRAY};
