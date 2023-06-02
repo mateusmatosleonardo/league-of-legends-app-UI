@@ -1,15 +1,27 @@
 import React from "react";
-import { Container } from "./styles";
+import { StatusBar } from "react-native";
+import { XStack } from "tamagui";
 
 interface HeaderProps {
   children: React.ReactNode
 }
 
+const statusBarHeight = StatusBar.currentHeight
+  ? StatusBar.currentHeight + 10
+  : 0;
+
 const Header: React.FC<HeaderProps> = ({ children }: HeaderProps) => {
   return (
-    <Container>
+    <XStack
+      justifyContent="flex-start"
+      alignItems="center"
+      w="100%"
+      px="$4"
+      pb="$4.5"
+      pt={statusBarHeight}
+    >
       {children}
-    </Container>
+    </XStack>
   )
 }
 
