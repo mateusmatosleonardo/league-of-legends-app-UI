@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Header, Layout, LoadingScreen } from "../../components";
-import HeaderInfos from "./components/HeaderInfos/HeaderInfos";
+import { Avatar, Stack, XStack, YStack } from "tamagui";
+import HeaderDetails from "./components/HeaderDetails/HeaderInfos";
+import FooterDetails from "./components/FooterDetails/FooterDetails";
 import { RootStackParamsList } from "../../routes/types";
 import { useControllerDetails } from "./controllers/useControllerDetails";
 import { MotiView } from "moti";
-import * as S from "./styles";
-import Icon from '@expo/vector-icons/MaterialIcons';
 import { EnumDifficulty } from "../../interfaces/interfaces";
-import FooterDetails from "./components/FooterDetails/FooterDetails";
+import Icon from '@expo/vector-icons/MaterialIcons';
+import * as S from "./styles";
 
 const DetailsScreen: React.FC = () => {
 
@@ -78,7 +79,6 @@ const DetailsScreen: React.FC = () => {
 
   return (
     <Layout>
-
       {champion ?
         <S.Scroll>
           <Header>
@@ -86,21 +86,24 @@ const DetailsScreen: React.FC = () => {
               <Icon name="keyboard-arrow-left" size={30} color="#fafafa" />
             </S.BtnGoBack>
           </Header>
-          <HeaderInfos
+
+          <HeaderDetails
             name={champion?.name}
             surname={champion?.surname}
             animation={animation}
-            onPress={() => setLiked(!liked)}
+            handleLike={() => setLiked(!liked)}
           />
-          <S.BoxDescription>
+
+          <Stack px="$4" py="$3.5">
             <S.Description numberOfLines={expanded ? undefined : 3}>{champion?.description}</S.Description>
             <S.Pressable onPress={handleToggleExpansion}>
               <S.TextToggle>{expanded ? "Ver Menos" : "Ver Mais"}</S.TextToggle>
             </S.Pressable>
-          </S.BoxDescription>
-          <S.WrapperSkills>
+          </Stack>
+
+          <YStack w="100%" px="$4">
             <S.Title>Habilidades</S.Title>
-            <S.SkillList>
+            <XStack w="100%" mt="$3.5">
               {champion.skills?.map((skill, index) => (
                 <MotiView
                   key={index}
@@ -111,17 +114,25 @@ const DetailsScreen: React.FC = () => {
                   }}
                   transition={{ delay: 50 + index * 380, type: "timing" }}
                 >
-                  <S.ToggleSkill onPress={() => handleSkillPress(index)} style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}>
-                    <S.SkillIcon source={skill.iconSkill} />
+                  <S.ToggleSkill
+                    onPress={() => handleSkillPress(index)}
+                    style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}
+                  >
+                    <Avatar circular size="$3.5" mr="$3">
+                      <Avatar.Image
+                        source={skill.iconSkill}
+                      />
+                    </Avatar>
                   </S.ToggleSkill>
                 </MotiView>
               ))}
-            </S.SkillList>
-            <S.SkillInfos>
+            </XStack>
+
+            <YStack w="100%" mt="$3.5">
               <S.SkillName>{selectedSkill?.nameSkill}</S.SkillName>
               <S.SkillDescription>{selectedSkill?.descriptionSkill}</S.SkillDescription>
-            </S.SkillInfos>
-          </S.WrapperSkills>
+            </YStack>
+          </YStack>
 
           <FooterDetails
             icon={champion?.iconFunction}
