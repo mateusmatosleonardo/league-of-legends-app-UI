@@ -13,7 +13,9 @@ import {
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './src/theme/theme';
 import { StackRoutes } from './src/routes/Stack.routes';
-
+import { TamaguiProvider } from 'tamagui';
+import config from './tamagui.config';
+;
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -28,11 +30,12 @@ export default function App() {
   }
 
   return (
-    <React.Fragment>
+    <TamaguiProvider config={config}>
       <ThemeProvider theme={theme}>
         <StatusBar style="light" />
         <StackRoutes />
       </ThemeProvider>
-    </React.Fragment>
+    </TamaguiProvider>
+
   );
 }
