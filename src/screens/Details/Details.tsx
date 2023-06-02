@@ -78,15 +78,16 @@ const DetailsScreen: React.FC = () => {
 
   return (
     <Layout>
+
       {champion ?
-        <React.Fragment>
+        <S.Scroll>
           <Header>
             <S.BtnGoBack onPress={() => navigation.goBack()}>
               <Icon name="keyboard-arrow-left" size={30} color="#fafafa" />
             </S.BtnGoBack>
           </Header>
           <HeaderInfos
-            name={champion?.nameChampion}
+            name={champion?.name}
             surname={champion?.surname}
             animation={animation}
             onPress={() => setLiked(!liked)}
@@ -111,7 +112,7 @@ const DetailsScreen: React.FC = () => {
                   transition={{ delay: 50 + index * 380, type: "timing" }}
                 >
                   <S.ToggleSkill onPress={() => handleSkillPress(index)} style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}>
-                    <S.SkillIcon source={skill.imgSkill} />
+                    <S.SkillIcon source={skill.iconSkill} />
                   </S.ToggleSkill>
                 </MotiView>
               ))}
@@ -128,8 +129,7 @@ const DetailsScreen: React.FC = () => {
             difficulty={champion?.difficulty}
             renderDifficulty={renderDifficulty(champion?.difficulty)}
           />
-
-        </React.Fragment> : <LoadingScreen />}
+        </S.Scroll> : <LoadingScreen />}
     </Layout>
   )
 };
