@@ -1,22 +1,11 @@
 import Jinx from "../assets/categories/marksmen/jinx.jpg";
-import Ashe from "../assets/categories/marksmen/ashe.jpg";
-import Caitlyn from "../assets/categories/marksmen/caitlyn.jpg";
-import Braum from "../assets/categories/tanks/braum.jpg";
-import DrMundo from "../assets/categories/tanks/drmundo.jpg";
-import Garen from "../assets/categories/tanks/garen.jpg";
-import Janna from "../assets/categories/supports/janna.jpg";
-
 import KaiSa from "../assets/categories/assassins/kaisa.jpg";
 import Vi from "../assets/categories/assassins/vi.jpg";
+import Ahri from "../assets/categories/wizards/ahri.jpg";
 
 export default {
   Jinx,
-  Ashe,
-  Caitlyn,
-  Braum,
-  DrMundo,
-  Garen,
-  Janna,
   KaiSa,
   Vi,
+  Ahri,
 };
