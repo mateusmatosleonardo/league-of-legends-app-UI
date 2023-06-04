@@ -13,30 +13,6 @@ const baseTitleStyles = css`
   font-family: ${({ theme }) => theme.fonts.Montserrat_Bold};
 `;
 
-export const Container = styled.View`
-  width: 100%;
-  padding: 0px 20px 15px 20px;
-  margin-top: 40px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const WrapperFunction = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const WrapperText = styled.View`
-  margin-left: 24px;
-`;
-
-export const IconFunction = styled.Image`
-  width: 70px;
-  height: 70px;
-`;
-
 export const StaticTitleFunction = styled.Text`
   ${baseTextStyles}
 `;
@@ -46,8 +22,6 @@ export const TitleFunction = styled.Text`
   margin-top: 4px;
 `;
 
-export const WrapperDifficulty = styled.View``;
-
 export const TitleDifficulty = styled.Text`
   ${baseTextStyles}
 `;
@@ -55,8 +29,4 @@ export const TitleDifficulty = styled.Text`
 export const Difficulty = styled.Text`
   ${baseTitleStyles}
   margin-top: 1px;
-`;
-
-export const WrapperDifficultyIcons = styled.View`
-  flex-direction: row;
 `;
