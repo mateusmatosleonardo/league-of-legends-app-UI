@@ -38,12 +38,6 @@ const config = createTamagui({
     heading: headingFont,
     body: bodyFont,
   },
-  family: {
-    Montserrat_Regular: " Montserrat_400Regular",
-    Montserrat_Medium: " Montserrat_500Medium",
-    Montserrat_SemiBold: " Montserrat_600SemiBold",
-    Montserrat_Bold: " Montserrat_700Bold",
-  },
   themes,
   tokens,
   media: createMedia({
