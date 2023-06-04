@@ -1,6 +1,7 @@
 import React from "react";
-import * as S from "./styles";
 import { FooterDetailsProps } from "./interface";
+import { StaticTitleFunction, TitleDifficulty, TitleFunction, Difficulty } from "./styles";
+import { Avatar, Stack, XStack } from "tamagui";
 
 const FooterDetails: React.FC<FooterDetailsProps> = ({
   icon,
@@ -9,25 +10,33 @@ const FooterDetails: React.FC<FooterDetailsProps> = ({
   renderDifficulty
 }: FooterDetailsProps) => {
   return (
-    <S.Container>
-      <S.WrapperFunction>
-        <S.IconFunction
-          source={icon}
-        />
-        <S.WrapperText>
-          <S.StaticTitleFunction>Função</S.StaticTitleFunction>
-          <S.TitleFunction>{roleOfChampion}</S.TitleFunction>
-        </S.WrapperText>
-      </S.WrapperFunction>
-
-      <S.WrapperDifficulty>
-        <S.TitleDifficulty>Dificuldade</S.TitleDifficulty>
-        <S.Difficulty>{difficulty}</S.Difficulty>
-        <S.WrapperDifficultyIcons>
+    <XStack
+      w="100%"
+      px="$4"
+      pb="$3.5"
+      mt="$6"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <XStack justifyContent="space-between" alignItems="center">
+        <Avatar size="$7">
+          <Avatar.Image
+            source={icon}
+          />
+        </Avatar>
+        <Stack ml="$5">
+          <StaticTitleFunction>Função</StaticTitleFunction>
+          <TitleFunction>{roleOfChampion}</TitleFunction>
+        </Stack>
+      </XStack>
+      <Stack>
+        <TitleDifficulty>Dificuldade</TitleDifficulty>
+        <Difficulty>{difficulty}</Difficulty>
+        <XStack>
           {renderDifficulty}
-        </S.WrapperDifficultyIcons>
-      </S.WrapperDifficulty>
-    </S.Container>
+        </XStack>
+      </Stack>
+    </XStack>
   )
 }
 
