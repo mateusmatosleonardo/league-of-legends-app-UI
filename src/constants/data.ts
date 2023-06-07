@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import {
   DetailsChampionType,
   EnumDifficulty,
+  EnumFunction,
   EnumType,
   EnumTypeBr,
 } from "../interfaces/interfaces";
@@ -19,38 +20,38 @@ export const data: DetailsChampionType[] = [
     skills: [
       {
         nameSkill: "PASSIVA - ANIME-SE!",
-        iconSkill: skills.Passiva,
+        iconSkill: skills.j0,
         descriptionSkill:
           "Jinx recebe um aumento drástico de Velocidade de Movimento e de Velocidade de Ataque sempre que ajuda a destruir uma estrutura ou a abater um Campeão inimigo ou monstro épico da selva.",
       },
       {
         nameSkill: "1 - TROCANDO!",
-        iconSkill: skills.Trocando,
+        iconSkill: skills.j1,
         descriptionSkill:
           "Jinx modifica seus ataques básicos ao trocar entre Pow-Pow, sua metralhadora, e Fishbones, seu lança-mísseis. Ataques com Pow-Pow concedem Velocidade de Ataque, enquanto ataques com Fishbones causam dano em área de ação, aumentam o alcance e drenam Mana.",
       },
       {
         nameSkill: "2 - ZAP!",
-        iconSkill: skills.Zap,
+        iconSkill: skills.j2,
         descriptionSkill:
           "Jinx usa Zapper, sua pistola de choques, para disparar um projétil que causa dano ao primeiro inimigo atingido, reduzindo sua velocidade e revelando-o.",
       },
       {
         nameSkill: "3 - MORDIDINHA FLAMEJANTE!",
-        iconSkill: skills.MordidinhaFlamejante,
+        iconSkill: skills.j3,
         descriptionSkill:
           "Jinx arremessa uma fileira de granadas imobilizantes que explodem após 5s, deixando os inimigos em chamas. Mordidinha Flamejante morde os Campeões inimigos que caminharem sobre ela, enraizando-os no local.",
       },
       {
         nameSkill: "ULTIMATE - SUPER MEGA MÍSSIL DA MORTE!",
-        iconSkill: skills.SuperMegaMissilDaMorte,
+        iconSkill: skills.j4,
         descriptionSkill:
           "Jinx dispara no mapa um supermíssil que acumula dano ao longo do trajeto. O míssil explode ao colidir com um Campeão inimigo, causando dano a ele e a inimigos ao redor com base na Vida perdida deles.",
       },
     ],
     type: EnumType.Marksmen,
     typeBr: EnumTypeBr.Atiradores,
-    function: "Atirador",
+    function: EnumFunction.Shooter,
     iconFunction: skills.Atirador,
     difficulty: EnumDifficulty.easy,
   },
@@ -95,7 +96,7 @@ export const data: DetailsChampionType[] = [
     ],
     type: EnumType.Assassins,
     typeBr: EnumTypeBr.Assassinos,
-    function: "Assassino",
+    function: EnumFunction.Assassin,
     iconFunction: skills.Assassino,
     difficulty: EnumDifficulty.medium,
   },
@@ -140,53 +141,143 @@ export const data: DetailsChampionType[] = [
     ],
     type: EnumType.Fighters,
     typeBr: EnumTypeBr.Lutadores,
-    function: "Lutador",
+    function: EnumFunction.Fighter,
     iconFunction: skills.Lutador,
     difficulty: EnumDifficulty.easy,
   },
+  {
+    id: uuidv4(),
+    image: images.Ahri,
+    name: "Ahri",
+    surname: "A Raposa de Nove Caudas",
+    description:
+      "A ligação de Ahri com a magia do mundo espiritual é inata. Ela é uma vastaya com traços de raposa, capaz de manipular as emoções de sua presa e consumir sua essência, devorando também as memórias e as percepções de cada alma absorvida. Outrora uma predadora poderosa, porém rebelde, Ahri agora viaja pelo mundo em busca de vestígios dos seus antepassados enquanto tenta substituir as memórias roubadas por novas de sua própria autoria.",
+    skills: [
+      {
+        nameSkill: "PASSIVA - FURTO DE ESSÊNCIA",
+        iconSkill: skills.a1,
+        descriptionSkill:
+          "Quando Ahri atinge um alvo com uma habilidade, ela ganha um acúmulo de Furto de Essência. Com uma quantidade suficiente de acúmulos, a próxima habilidade dela a atingir um inimigo também a cura.",
+      },
+      {
+        nameSkill: "1 - ORBE DA ILUSÃO",
+        iconSkill: skills.a2,
+        descriptionSkill:
+          "Ahri lança e puxa de volta seu orbe, causando Dano Mágico na ida e Dano Verdadeiro na volta.",
+      },
+      {
+        nameSkill: "2 - FOGO DE RAPOSA",
+        iconSkill: skills.a3,
+        descriptionSkill:
+          "Ahri recebe um breve impulso de Velocidade de Movimento e lança três Fogos de Raposa que perseguem e atacam inimigos próximos.",
+      },
+      {
+        nameSkill: "3 - ENCANTO",
+        iconSkill: skills.a4,
+        descriptionSkill:
+          "Ahri manda um beijo que causa dano e encanta um inimigo, interrompendo imediatamente qualquer habilidade de movimento em progresso e fazendo com que ele ande inofensivamente em sua direção. O alvo temporariamente sofre dano aumentado de Ahri.",
+      },
+      {
+        nameSkill: "ULTIMATE - ÍMPETO ESPIRITUAL",
+        iconSkill: skills.a5,
+        descriptionSkill:
+          "Ahri avança e dispara raios de essência, causando dano a inimigos próximos. Ímpeto Espiritual pode ser conjurado até três vezes antes de entrar em Tempo de Recarga.",
+      },
+    ],
+    type: EnumType.Wizards,
+    typeBr: EnumTypeBr.Magos,
+    function: EnumFunction.Mage,
+    iconFunction: skills.Mago,
+    difficulty: EnumDifficulty.medium,
+  },
+  {
+    id: uuidv4(),
+    image: images.Thresh,
+    name: "Thresh",
+    surname: "O Guardião das Correntes",
+    description:
+      "Sádico e astuto, Thresh é um espírito ambicioso e incansável das Ilhas das Sombras. Ele já foi guardião de incontáveis segredos arcanos, mas acabou sucumbindo a poderes maiores do que a vida e a morte. Agora, Thresh vive atormentando e corrompendo vítimas de forma lenta e dolorosamente criativa. Seus alvos sofrem muito além de seus corpos mortais, pois Thresh aflige as próprias almas, aprisionando-as em sua lanterna maldita para torturá-las por toda a eternidade.",
+    skills: [
+      {
+        nameSkill: "PASSIVA - CONDENAÇÃO",
+        iconSkill: skills.t0,
+        descriptionSkill:
+          "Thresh pode colher as almas de inimigos que morrerem perto dele, recebendo Armadura e Poder de Habilidade permanentemente.",
+      },
+      {
+        nameSkill: "1 - SENTENÇA",
+        iconSkill: skills.t1,
+        descriptionSkill:
+          "Thresh prende um inimigo em suas correntes e puxa em sua direção. Ativar essa habilidade uma segunda vez puxa Thresh em direção ao inimigo.",
+      },
+      {
+        nameSkill: "2 - PASSAGEM SOMBRIA",
+        iconSkill: skills.t2,
+        descriptionSkill:
+          "Arremessa uma lanterna em um local-alvo. Aliados podem clicar na lanterna para avançar na direção de Thresh.",
+      },
+      {
+        nameSkill: "3 - ESFOLAR",
+        iconSkill: skills.t3,
+        descriptionSkill:
+          "Os ataques de Thresh são fortalecidos: quanto mais tempo ele esperar entre ataques, mais dano ele causará. Ao ativar, Thresh arrasta sua corrente e empurra todos os inimigos atingidos na direção do golpe.",
+      },
+      {
+        nameSkill: "ULTIMATE - A CAIXA",
+        iconSkill: skills.t4,
+        descriptionSkill:
+          "Uma prisão feita de paredes que, se quebradas, causam dano e Lentidão.",
+      },
+    ],
+    type: EnumType.Tanks,
+    typeBr: EnumTypeBr.Tanques,
+    function: EnumFunction.Tank,
+    iconFunction: skills.Tanque,
+    difficulty: EnumDifficulty.hard,
+  },
+  {
+    id: uuidv4(),
+    image: images.Sona,
+    name: "Sona",
+    surname: "A Mestra das Cordas",
+    description:
+      "Sona é um prodígio do etwahl, expressando-se apenas por meio de seus acordes graciosos e árias vibrantes. Seus modos gentis e refinados conquistaram a nobreza demaciana, embora alguns especulem que suas melodias cativantes, na verdade, exalem magia – uma possibilidade perigosa no reino. Silenciosa diante de estranhos, mas facilmente compreendida pelos amigos, Sona dedilha acordes não só para tranquilizar os aliados feridos, mas para derrubar inimigos desavisados.",
+    skills: [
+      {
+        nameSkill: "PASSIVA - POWER CHORD",
+        iconSkill: skills.s0,
+        descriptionSkill:
+          "Depois de conjurar 3 habilidades, o próximo ataque básico de Sona causará Dano Mágico adicional e um efeito extra com base na última música ativada.",
+      },
+      {
+        nameSkill: "1 - HINO DO VALOR",
+        iconSkill: skills.s1,
+        descriptionSkill:
+          "Sona toca o Hino do Valor, conjurando rajadas de som, causando Dano Mágico a dois inimigos próximos, priorizando Campeões e monstros. Sona recebe uma aura temporária que concede dano adicional no próximo ataque de aliados próximos contra inimigos.",
+      },
+      {
+        nameSkill: "2 - ÁRIA DA PERSEVERANÇA",
+        iconSkill: skills.s2,
+        descriptionSkill:
+          "Sona toca a Ária da Perseverança, conjurando melodias protetoras, curando a si mesma e a um aliado ferido próximo. Sona recebe uma aura temporária que concede um escudo momentâneo a aliados marcados pela área.",
+      },
+      {
+        nameSkill: "3 - CANÇÃO DA CELERIDADE",
+        iconSkill: skills.s3,
+        descriptionSkill:
+          "Sona toca a Canção da Celeridade, concedendo Velocidade de Movimento adicional a aliados próximos. Sona recebe uma aura temporária que concede Velocidade de Movimento adicional a Campeões aliados marcados pela área.",
+      },
+      {
+        nameSkill: "ULTIMATE - CRESCENDO",
+        iconSkill: skills.s4,
+        descriptionSkill:
+          "Sona toca o seu melhor acorde, causando Dano Mágico, atordoando Campeões inimigos e forçando-os a dançar. Cada nível dessa habilidade reduz o Tempo de Recarga base das habilidades básicas de Sona.",
+      },
+    ],
+    type: EnumType.Supports,
+    typeBr: EnumTypeBr.Suportes,
+    function: EnumFunction.Support,
+    iconFunction: skills.Suporte,
+    difficulty: EnumDifficulty.easy,
+  },
 ];
-
-/*
-  {
-    id: uuidv4(),
-    imgChampion: images.Ashe,
-    nameChampion: "Ashe",
-    typeChampion: "marksmen",
-    typeChampionPtBr: "atiradores",
-  },
-  {
-    id: uuidv4(),
-    imgChampion: images.Caitlyn,
-    nameChampion: "Caitlyn",
-    typeChampion: "marksmen",
-    typeChampionPtBr: "atiradores",
-  },
-  {
-    id: uuidv4(),
-    imgChampion: images.Janna,
-    nameChampion: "Janna",
-    typeChampion: "supports",
-    typeChampionPtBr: "suportes",
-  },
-  {
-    id: uuidv4(),
-    imgChampion: images.DrMundo,
-    nameChampion: "DrMundo",
-    typeChampion: "tanks",
-    typeChampionPtBr: "tanques",
-  },
-  {
-    id: uuidv4(),
-    imgChampion: images.Garen,
-    nameChampion: "Garen",
-    typeChampion: "tanks",
-    typeChampionPtBr: "tanques",
-  },
-  {
-    id: uuidv4(),
-    imgChampion: images.Braum,
-    nameChampion: "Braum",
-    typeChampion: "tanks",
-    typeChampionPtBr: "tanques",
-  },
-*/
