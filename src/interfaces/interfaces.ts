@@ -5,7 +5,7 @@ import { RootStackParamsList } from "../routes/types";
 export enum EnumType {
   Assassins = "assassins",
   Fighters = "fighters",
-  Mages = "mages",
+  Wizards = "wizards",
   Marksmen = "marksmen",
   Supports = "supports",
   Tanks = "tanks",
@@ -24,6 +24,15 @@ export enum EnumDifficulty {
   easy = "Baixa",
   medium = "Moderada",
   hard = "Alta",
+}
+
+export enum EnumFunction {
+  Assassin = "Assassino",
+  Fighter = "Lutador",
+  Mage = "Mago",
+  Shooter = "Atirador",
+  Support = "Suporte",
+  Tank = "Tanque",
 }
 
 export interface ChampionType {
@@ -48,7 +57,7 @@ export interface DetailsChampionType extends ChampionType {
   surname?: string;
   description?: string;
   skills?: Skills[];
-  function: string;
+  function: EnumFunction;
   iconFunction: ImageSourcePropType;
   difficulty: EnumDifficulty;
 }
