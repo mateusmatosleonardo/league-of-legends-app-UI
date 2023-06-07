@@ -1,11 +1,15 @@
-import Jinx from "../assets/categories/marksmen/jinx.jpg";
-import KaiSa from "../assets/categories/assassins/kaisa.jpg";
-import Vi from "../assets/categories/assassins/vi.jpg";
-import Ahri from "../assets/categories/wizards/ahri.jpg";
+import Jinx from "../assets/champions/jinx.jpg";
+import KaiSa from "../assets/champions/kaisa.jpg";
+import Vi from "../assets/champions/vi.jpg";
+import Ahri from "../assets/champions/ahri.jpg";
+import Thresh from "../assets/champions/Thresh.jpg";
+import Sona from "../assets/champions/Sona.jpg";
 
 export default {
   Jinx,
   KaiSa,
   Vi,
   Ahri,
+  Thresh,
+  Sona,
 };
