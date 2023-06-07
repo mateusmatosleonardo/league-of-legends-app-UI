@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Header, Layout, LoadingScreen } from "../../components";
 import { Avatar, Stack, XStack, YStack } from "tamagui";
-import HeaderDetails from "./components/HeaderDetails/HeaderInfos";
+import HeaderDetails from "./components/HeaderDetails/HeaderDetails";
 import FooterDetails from "./components/FooterDetails/FooterDetails";
 import { RootStackParamsList } from "../../routes/types";
 import { useControllerDetails } from "./controllers/useControllerDetails";
