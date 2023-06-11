@@ -65,31 +65,31 @@ export const data: DetailsChampionType[] = [
     skills: [
       {
         nameSkill: "PASSIVA - SEGUNDA PELE",
-        iconSkill: skills.k1,
+        iconSkill: skills.k0,
         descriptionSkill:
           "Os ataques básicos de Kai'Sa acumulam Plasma, causando Dano Mágico adicional crescente. Efeitos imobilizadores de aliados ajudam a acumular Plasma. Além disso, as aquisições de itens de Kai'Sa aprimoram suas habilidades básicas, deixando-as mais poderosas.",
       },
       {
         nameSkill: "1 - CHUVA ICATHIANA",
-        iconSkill: skills.k2,
+        iconSkill: skills.k1,
         descriptionSkill:
           "Kai'Sa dispara uma chuva de projéteis que vão atrás de alvos próximos. Arma Viva: Chuva Icathiana é aprimorada e lança mais mísseis.",
       },
       {
         nameSkill: "2 - EXPLORADORA DO VAZIO",
-        iconSkill: skills.k3,
+        iconSkill: skills.k2,
         descriptionSkill:
           "Kai'Sa lança um projétil de longo alcance, revelando e marcando inimigos com sua passiva. Arma Viva: Exploradora do Vazio é aprimorada, fazendo com que aplique mais marcas de Plasma e reduza o Tempo de Recarga ao atingir um Campeão.",
       },
       {
         nameSkill: "3 - SOBRECARGA",
-        iconSkill: skills.k4,
+        iconSkill: skills.k3,
         descriptionSkill:
           "Kai'Sa aumenta brevemente sua Velocidade de Movimento, depois aumenta sua Velocidade de Ataque. Arma Viva: Sobrecarga é aprimorada e concede Invisibilidade por um breve período.",
       },
       {
         nameSkill: "ULTIMATE - INSTINTO ASSASSINO",
-        iconSkill: skills.k5,
+        iconSkill: skills.k4,
         descriptionSkill:
           "Kai'Sa avança para perto de um Campeão inimigo afetado por Plasma, ganhando um escudo temporário.",
       },
@@ -110,31 +110,31 @@ export const data: DetailsChampionType[] = [
     skills: [
       {
         nameSkill: "PASSIVA - PANCADA CERTEIRA",
-        iconSkill: skills.vi1,
+        iconSkill: skills.vi0,
         descriptionSkill:
           "Todo terceiro ataque contra o mesmo inimigo causa dano equivalente a um percentual da Vida máxima do alvo, reduz a Armadura do alvo e concede Velocidade de Ataque a Vi.",
       },
       {
         nameSkill: "1 - QUEBRA-COFRES",
-        iconSkill: skills.vi2,
+        iconSkill: skills.vi1,
         descriptionSkill:
           "Vi carrega suas manoplas e desfere um soco capaz de quebrar cofres, empurrando-a para a frente. Os inimigos que ela atingir são empurrados para trás e recebem um acúmulo de Pancada Certeira.",
       },
       {
         nameSkill: "2 - BLINDAGEM",
-        iconSkill: skills.vi3,
+        iconSkill: skills.vi2,
         descriptionSkill:
           "Vi ganha acúmulos de Blindagem ao acertar algum inimigo com um ataque ou uma habilidade. Ativar Blindagem gera um escudo que absorve dano. Com o máximo de acúmulos, Vi também recebe Velocidade de Movimento.",
       },
       {
         nameSkill: "3 - FORÇA EXCESSIVA",
-        iconSkill: skills.vi4,
+        iconSkill: skills.vi3,
         descriptionSkill:
           "O próximo ataque de Vi atravessará seu alvo, causando dano aos inimigos atrás dele.",
       },
       {
         nameSkill: "ULTIMATE - SAQUE E ENTERRADA",
-        iconSkill: skills.vi5,
+        iconSkill: skills.vi4,
         descriptionSkill:
           "Vi persegue um inimigo em alta velocidade, arremessando para o lado qualquer um que estiver em seu trajeto. Ao alcançar o alvo, ela o arremessa ao ar, salta atrás dele e o golpeia de volta ao chão.",
       },
@@ -155,31 +155,31 @@ export const data: DetailsChampionType[] = [
     skills: [
       {
         nameSkill: "PASSIVA - FURTO DE ESSÊNCIA",
-        iconSkill: skills.a1,
+        iconSkill: skills.a0,
         descriptionSkill:
           "Quando Ahri atinge um alvo com uma habilidade, ela ganha um acúmulo de Furto de Essência. Com uma quantidade suficiente de acúmulos, a próxima habilidade dela a atingir um inimigo também a cura.",
       },
       {
         nameSkill: "1 - ORBE DA ILUSÃO",
-        iconSkill: skills.a2,
+        iconSkill: skills.a1,
         descriptionSkill:
           "Ahri lança e puxa de volta seu orbe, causando Dano Mágico na ida e Dano Verdadeiro na volta.",
       },
       {
         nameSkill: "2 - FOGO DE RAPOSA",
-        iconSkill: skills.a3,
+        iconSkill: skills.a2,
         descriptionSkill:
           "Ahri recebe um breve impulso de Velocidade de Movimento e lança três Fogos de Raposa que perseguem e atacam inimigos próximos.",
       },
       {
         nameSkill: "3 - ENCANTO",
-        iconSkill: skills.a4,
+        iconSkill: skills.a3,
         descriptionSkill:
           "Ahri manda um beijo que causa dano e encanta um inimigo, interrompendo imediatamente qualquer habilidade de movimento em progresso e fazendo com que ele ande inofensivamente em sua direção. O alvo temporariamente sofre dano aumentado de Ahri.",
       },
       {
         nameSkill: "ULTIMATE - ÍMPETO ESPIRITUAL",
-        iconSkill: skills.a5,
+        iconSkill: skills.a4,
         descriptionSkill:
           "Ahri avança e dispara raios de essência, causando dano a inimigos próximos. Ímpeto Espiritual pode ser conjurado até três vezes antes de entrar em Tempo de Recarga.",
       },
