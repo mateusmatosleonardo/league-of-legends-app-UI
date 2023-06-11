@@ -50,6 +50,6 @@ If you are interested in contributing to the project or would like to report a b
 
 ## License
 
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
+This project is licensed under the [MIT License](LICENSE.md)
 Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
 details.
