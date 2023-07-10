@@ -1,10 +1,14 @@
-# League of Legends UI
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/c588be2f-3dd4-4f2d-8e58-6a119597a2af" width="100px;" alt="icon"/>
+
+# League of Legends App
 
 The project in question was developed with the aim of providing a learning environment. Using the combination of Expo technologies, TypeScript, Styled Components and the Tamagui UI Kit.
 
 ## Preview
-
-Preview
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/5d2e7d7e-0dab-4804-9126-fd740cc228b1" width="200px;" alt="screen-one"/>
+&nbsp;
+&nbsp;
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/92540575-ab24-478c-a995-4a5202044882" width="200px;" alt="screen-two"/>
 
 ## Getting Started
 
