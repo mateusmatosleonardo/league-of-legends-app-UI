@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
+import * as S from "./styles";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Header, Layout, LoadingScreen } from "../../components";
 import { Avatar, Stack, XStack, YStack } from "tamagui";
-import HeaderDetails from "./components/HeaderDetails/HeaderDetails";
-import FooterDetails from "./components/FooterDetails/FooterDetails";
 import { RootStackParamsList } from "../../routes/types";
 import { useControllerDetails } from "./controllers/useControllerDetails";
 import { MotiView } from "moti";
 import { EnumDifficulty } from "../../interfaces/interfaces";
 import Icon from '@expo/vector-icons/MaterialIcons';
-import * as S from "./styles";
+import HeaderDetails from "./components/HeaderDetails/HeaderDetails";
+import FooterDetails from "./components/FooterDetails/FooterDetails";
 
 const DetailsScreen: React.FC = () => {
 
@@ -21,7 +21,7 @@ const DetailsScreen: React.FC = () => {
     firstAnimation,
     expanded,
     handleToggleExpansion,
-    handleSkillPress,
+    handleSkillSelected,
     selectedSkillIndex
   } = useControllerDetails();
 
@@ -115,7 +115,7 @@ const DetailsScreen: React.FC = () => {
                   transition={{ delay: 50 + index * 380, type: "timing" }}
                 >
                   <S.ToggleSkill
-                    onPress={() => handleSkillPress(index)}
+                    onPress={() => handleSkillSelected(index)}
                     style={{ opacity: selectedSkillIndex === index ? 1 : 0.7 }}
                   >
                     <Avatar circular size="$3.5" mr="$3">

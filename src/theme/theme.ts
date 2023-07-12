@@ -2,7 +2,7 @@ export const theme = {
   name: "DefaultTheme",
   colors: {
     WHITE: "#ffffff",
-    BLACK: "#0f0f0f",
+    BLACK: "#101114",
     GRAY: "#ececec",
     GRAY_SECONDARY: "#B3B0B8",
     YELLOW: "#cd8d04",

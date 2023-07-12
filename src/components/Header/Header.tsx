@@ -7,8 +7,8 @@ interface HeaderProps {
 }
 
 const statusBarHeight = StatusBar.currentHeight
-  ? StatusBar.currentHeight + 10
-  : 0;
+  ? StatusBar.currentHeight + 20
+  : 40;
 
 const Header: React.FC<HeaderProps> = ({ children }: HeaderProps) => {
   return (
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ children }: HeaderProps) => {
       alignItems="center"
       w="100%"
       px="$4"
-      pb="$4.5"
+      pb="$4"
       pt={statusBarHeight}
     >
       {children}

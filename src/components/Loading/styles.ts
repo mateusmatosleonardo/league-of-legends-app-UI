@@ -4,7 +4,7 @@ export const LoadingView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.BLACK};
+  background-color: #101114;
 `;
 
 export const LoadingIndicator = styled.ActivityIndicator``;

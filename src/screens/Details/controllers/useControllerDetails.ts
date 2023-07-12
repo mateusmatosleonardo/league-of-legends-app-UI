@@ -27,7 +27,7 @@ export const useControllerDetails = () => {
     setExpanded(!expanded);
   };
 
-  const handleSkillPress = (index: number) => {
+  const handleSkillSelected = (index: number) => {
     setSelectedSkillIndex(index);
   };
 
@@ -42,7 +42,7 @@ export const useControllerDetails = () => {
     expanded,
     setExpanded,
     handleToggleExpansion,
-    handleSkillPress,
+    handleSkillSelected,
     selectedSkillIndex,
     setSelectedSkillIndex,
   };

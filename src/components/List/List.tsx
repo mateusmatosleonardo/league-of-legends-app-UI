@@ -31,21 +31,31 @@ const List: React.FC = () => {
 
   return (
     <YStack>
-      <XStack
-        justifyContent="space-between"
-        alignItems="center"
-        py="$5"
-        pl="$4"
-        pr="$4">
-        <Title>Meus campeões</Title>
-        <ShowAllText>Ver todos</ShowAllText>
-      </XStack>
+      <MotiView
+        from={{ opacity: 0, translateX: -30, }}
+        animate={{
+          opacity: 1,
+          translateX: 0,
+        }}
+        transition={{ delay: 400, type: "timing" }}
+      >
+        <XStack
+          justifyContent="space-between"
+          alignItems="center"
+          pb="$5"
+          pl="$4"
+          pr="$4">
+          <Title>Meus campeões</Title>
+          <ShowAllText>Ver todos</ShowAllText>
+        </XStack>
+      </MotiView>
       <FlatList
         data={champions}
         keyExtractor={item => item.name}
         renderItem={renderItem}
         contentContainerStyle={{ paddingStart: 20, paddingEnd: 5 }}
         horizontal
+        showsHorizontalScrollIndicator={false}
       />
     </YStack>
   )

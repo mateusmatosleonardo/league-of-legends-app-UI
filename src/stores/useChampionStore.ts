@@ -1,9 +1,9 @@
 import { create } from "zustand";
 import { data } from "../constants/data";
-import { ChampionType } from "../interfaces/interfaces";
+import { DetailsChampionType } from "../interfaces/interfaces";
 
 export type State = {
-  champions: ChampionType[];
+  champions: DetailsChampionType[];
 };
 
 const useChampionStore = create<State>((set) => ({

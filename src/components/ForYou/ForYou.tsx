@@ -47,12 +47,21 @@ const ForYou = () => {
 
   return (
     <YStack py="$5">
-      <XStack
-        justifyContent="space-between"
-        alignItems="center"
-        px="$4">
-        <Title>Recomendados para você</Title>
-      </XStack>
+      <MotiView
+        from={{ opacity: 0, translateX: -30 }}
+        animate={{
+          opacity: 1,
+          translateX: 0,
+        }}
+        transition={{ delay: 500, type: "timing" }}
+      >
+        <XStack
+          justifyContent="space-between"
+          alignItems="center"
+          px="$4">
+          <Title>Recomendados para você</Title>
+        </XStack>
+      </MotiView>
       <FlatList
         horizontal
         pagingEnabled

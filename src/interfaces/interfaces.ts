@@ -43,7 +43,7 @@ export interface ChampionType {
   typeBr: EnumTypeBr;
 }
 
-export interface CardProps extends ChampionType {
+export interface CardProps extends DetailsChampionType {
   navigation?: () => void;
 }
 

@@ -7,8 +7,11 @@ import CardProPlayer from './components/CardProPlayer/CardProPlayer';
 import { ProPlayerBuilds as Assets } from '../../constants';
 import { FlatList, ListRenderItemInfo } from 'react-native';
 import { MotiView } from 'moti';
+import { useTheme } from 'styled-components';
 
 const ProPlayerBuilds = () => {
+
+  const { colors } = useTheme();
 
   const data: CardProPlayerProps[] = [
     {
@@ -61,7 +64,7 @@ const ProPlayerBuilds = () => {
           opacity: 1,
           translateX: 0,
         }}
-        transition={{ delay: 400 + index * 400, type: "timing" }}
+        transition={{ delay: 500 + index * 500, type: "timing" }}
       >
         <CardProPlayer {...item} />
       </MotiView>
@@ -72,19 +75,29 @@ const ProPlayerBuilds = () => {
 
   return (
     <YStack>
-      <XStack
-        justifyContent="space-between"
-        alignItems="center"
-        pl="$4"
-        pr="$4">
-        <Title>Builds de pro-players</Title>
-        <ShowAllText>Ver todos</ShowAllText>
-      </XStack>
+      <MotiView
+        from={{ opacity: 0, translateX: -30 }}
+        animate={{
+          opacity: 1,
+          translateX: 0,
+        }}
+        transition={{ delay: 500, type: "timing" }}
+      >
+        <XStack
+          justifyContent="space-between"
+          alignItems="center"
+          pl="$4"
+          pr="$4">
+          <Title>Builds de pro-players</Title>
+          <ShowAllText>Ver todos</ShowAllText>
+        </XStack>
+      </MotiView>
       <FlatList
         data={data}
         keyExtractor={item => item.name}
         renderItem={renderItem}
         ItemSeparatorComponent={ItemSeparatorComponent}
+        contentContainerStyle={{ backgroundColor: colors.BLACK }}
       />
     </YStack>
   );
