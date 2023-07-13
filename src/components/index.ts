@@ -1,8 +1,15 @@
 import Layout from "./Layout/Layout";
 import Header from "./Header/Header";
-import List from "./List/List";
+import MyListOfChampions from "./MyListOfChampions/MyListOfChampions";
 import LoadingScreen from "./Loading/Loading";
 import ForYou from "./ForYou/ForYou";
 import ProPlayerBuilds from "./ ProPlayerBuilds/ ProPlayerBuilds";
 
-export { Layout, Header, List, LoadingScreen, ForYou, ProPlayerBuilds };
+export {
+  Layout,
+  Header,
+  MyListOfChampions,
+  LoadingScreen,
+  ForYou,
+  ProPlayerBuilds,
+};
