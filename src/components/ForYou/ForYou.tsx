@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
-import { Container, BgImage, FeaturedImage, Title } from './styles';
+import { Container, BgImage, FeaturedImage, Title, InfoWrapper, ChampionName, ChampionSurname, ButtonCard } from './styles';
 import { XStack, YStack } from 'tamagui';
 import { images } from '../../constants';
 import { FlatList, ListRenderItemInfo } from 'react-native';
 import { MotiView } from 'moti';
+import Chevron from '@expo/vector-icons/Feather';
 
 interface ForYouType {
   name: string;
+  surname: string;
   image: any;
   bgImage: any;
 }
@@ -16,11 +18,13 @@ const ForYou = () => {
   const data: ForYouType[] = [
     {
       name: 'Yasuo',
+      surname: 'O Imperdoável',
       image: images.Yasuo,
       bgImage: images.BgYasuo,
     },
     {
       name: 'Violet',
+      surname: 'A Defensora de Piltover',
       image: images.Violet,
       bgImage: images.BgViolet,
     }
@@ -37,6 +41,13 @@ const ForYou = () => {
         transition={{ delay: 400 + index * 400, type: "timing" }}
       >
         <Container>
+          <InfoWrapper>
+            <ChampionName>{item.name}</ChampionName>
+            <ChampionSurname>{item.surname}</ChampionSurname>
+          </InfoWrapper>
+          <ButtonCard>
+            <Chevron name="chevron-right" color="#fafafa" size={26} />
+          </ButtonCard>
           <BgImage source={item.bgImage} resizeMode="contain">
             <FeaturedImage source={item.image} resizeMode='contain' />
           </BgImage>
@@ -53,7 +64,7 @@ const ForYou = () => {
           opacity: 1,
           translateX: 0,
         }}
-        transition={{ delay: 500, type: "timing" }}
+        transition={{ delay: 400, type: "timing" }}
       >
         <XStack
           justifyContent="space-between"
