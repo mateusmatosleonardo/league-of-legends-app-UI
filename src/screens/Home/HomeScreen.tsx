@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layout, Header, List, ForYou, ProPlayerBuilds } from '../../components';
-import { Logo } from '../../constants';
-import { ScrollView, SectionList, SectionListRenderItem, View } from 'react-native';
+import { Header, MyListOfChampions, ForYou, ProPlayerBuilds } from '../../components';
+import { SectionList, SectionListRenderItem, View } from 'react-native';
 import { useTheme } from 'styled-components';
+import { HeaderHome } from './components/Header/HeaderHome';
 
 type Section = {
   title: string;
@@ -15,7 +15,7 @@ const HomeScreen: React.FC = () => {
 
   const sections: Section[] = [
     { title: 'Header', data: ['header'] },
-    { title: 'List', data: ['list'] },
+    { title: 'MyListOfChampions', data: ['list'] },
     { title: 'For You', data: ['forYou'] },
     { title: 'ProPlayerBuilds', data: ['proPlayerBuilds'] },
   ];
@@ -25,11 +25,11 @@ const HomeScreen: React.FC = () => {
       case 'Header':
         return (
           <Header>
-            <Logo width={38} height={38} />
+            <HeaderHome />
           </Header>
         );
-      case 'List':
-        return <List />;
+      case 'MyListOfChampions':
+        return <MyListOfChampions />;
       case 'For You':
         return <ForYou />;
       case 'ProPlayerBuilds':
