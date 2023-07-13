@@ -94,3 +94,8 @@ export interface ListType {
 }
 
 export type HomeScreenProps = NavigationProp<RootStackParamsList, "Home">;
+
+export type AllYourChampionScreenProps = NavigationProp<
+  RootStackParamsList,
+  "AllYourChampions"
+>;
