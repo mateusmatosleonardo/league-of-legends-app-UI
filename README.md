@@ -1,4 +1,4 @@
-<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/074035f5-2227-4377-9076-e30e5851e6e5" width="100px;" alt="icon"/>
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/92fe7011-d239-42ae-9d3c-2142fb89a85e" width="100px;" alt="icon"/>
 
 # League of Legends App
 
