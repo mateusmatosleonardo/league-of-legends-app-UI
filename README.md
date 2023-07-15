@@ -2,42 +2,45 @@
 
 # League of Legends App
 
-The project in question was developed with the aim of providing a learning environment. Using the combination of Expo technologies, TypeScript, Styled Components and the Tamagui UI Kit.
+O projeto em questão foi desenvolvido com o objetivo de proporcionar um ambiente de aprendizagem.
+Usando a combinação de tecnologias Expo, TypeScript, Styled Components, Tamagui UI Kit e Zustand.
 
 ## Preview
-<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/5d2e7d7e-0dab-4804-9126-fd740cc228b1" width="200px;" alt="screen-one"/>
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/d3b9cbd2-602d-416a-8f37-7140d51d4527" width="200px;" alt="screen-one"/>
 &nbsp;
 &nbsp;
-<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/92540575-ab24-478c-a995-4a5202044882" width="200px;" alt="screen-two"/>
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/2d2f99cd-7ca8-4113-9bd1-faf61fa9564e" width="200px;" alt="screen-two"/>
+&nbsp;
+&nbsp;
+<img src="https://github.com/mateusmatosleonardo/league-of-legends-app-UI/assets/73812069/671774db-a499-4a68-950e-87b3d3777b00" width="200px;" alt="screen-three"/>
 
-## Getting Started
+## Começando
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+Estas instruções fornecerão a você uma cópia do projeto instalado e funcionando no
+sua máquina local para fins de desenvolvimento e teste.
 
-### Prerequisites
+### Pré-requisitos
 
-Requirements for the software and other tools to build, test and push 
+Requisitos para o software e outras ferramentas para construir, testar e enviar:
 - Node.js
 - Expo CLI
-- Physical device or emulator
+- Dispositivo físico ou emulador
 
-### Installing
+## Instalação
 
-Installing dependencies
+Instalação de dependências
 
     yarn install or npm install
 
-Running the bundle
+Executando o bundle
 
     npx expo start
 
-## Contributing
+## Contribuindo
 
-If you are interested in contributing to the project or would like to report a bug that you encountered during development, I would be happy to receive your feedback.
+Se você estiver interessado em contribuir com o projeto ou quiser relatar um bug que encontrou durante o desenvolvimento, ficarei feliz em receber seus comentários.
 
-## Developer
+## Desenvolvedor
 
 <table>
   <tr>
@@ -52,8 +55,8 @@ If you are interested in contributing to the project or would like to report a b
   </tr>
 </table>
 
-## License
+## Licença
 
-This project is licensed under the [MIT License](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details.
+Este projeto está licenciado sob o [MIT License](LICENSE.md)
+Consulte a [LICENSE.md](LICENSE.md) arquivo para
+detalhes.
